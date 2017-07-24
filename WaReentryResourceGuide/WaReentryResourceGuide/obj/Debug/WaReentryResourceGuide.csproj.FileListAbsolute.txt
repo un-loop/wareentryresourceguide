@@ -71,3 +71,7 @@ C:\Users\randeeb\Documents\GitHub\wareentryresourceguide\WaReentryResourceGuide\
 C:\Users\randeeb\Documents\GitHub\wareentryresourceguide\WaReentryResourceGuide\WaReentryResourceGuide\obj\Debug\WaReentryResourceGuide.csprojResolveAssemblyReference.cache
 C:\Users\randeeb\Documents\GitHub\wareentryresourceguide\WaReentryResourceGuide\WaReentryResourceGuide\obj\Debug\WaReentryResourceGuide.dll
 C:\Users\randeeb\Documents\GitHub\wareentryresourceguide\WaReentryResourceGuide\WaReentryResourceGuide\obj\Debug\WaReentryResourceGuide.pdb
+C:\Users\randeeb\Documents\GitHub\wareentryresourceguide\WaReentryResourceGuide\WaReentryResourceGuide\bin\EntityFramework.dll
+C:\Users\randeeb\Documents\GitHub\wareentryresourceguide\WaReentryResourceGuide\WaReentryResourceGuide\bin\EntityFramework.SqlServer.dll
+C:\Users\randeeb\Documents\GitHub\wareentryresourceguide\WaReentryResourceGuide\WaReentryResourceGuide\bin\EntityFramework.xml
+C:\Users\randeeb\Documents\GitHub\wareentryresourceguide\WaReentryResourceGuide\WaReentryResourceGuide\bin\EntityFramework.SqlServer.xml
