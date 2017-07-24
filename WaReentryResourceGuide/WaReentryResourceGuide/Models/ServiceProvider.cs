@@ -10,9 +10,8 @@ namespace WaReentryResourceGuide.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public int ContactInfoID { get; set; }
-
-        public int CountyID { get; set; }
-
+        
+        public virtual ICollection<County> CountiesServed { get; set; }
         public virtual ICollection<QualityFlag> QualityFlags { get; set; }
 
         public virtual ICollection<AdminNote> AdminNotes { get; set; }
