@@ -68,13 +68,13 @@ class App extends React.Component<{}, {}> {
           <h1>Washington Re-entry Connect</h1>
         </Row>
         <Row>
-          <Col sm={4} md={4}>
+          <Col sm={12} md={4}>
             <CountyFilterSelect/>
           </Col>
-          <Col sm={4} md={4}>
+          <Col sm={12} md={4}>
             <GenderFilterSelect/>
           </Col>
-          <Col sm={4} md={4}>
+          <Col sm={12} md={4}>
             <ServiceFilterSelect/>
           </Col>
         </Row>
