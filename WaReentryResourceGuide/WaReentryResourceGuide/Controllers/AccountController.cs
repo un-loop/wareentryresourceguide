@@ -16,9 +16,11 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using static WaReentryResourceGuide.Models.ExternalLoginModels;
+using System.Web.Http.Cors;
 
 namespace WaReentryResourceGuide.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
