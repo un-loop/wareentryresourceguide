@@ -20,6 +20,9 @@ namespace WaReentryResourceGuide.DAL
                 new ServiceProvider { ContactInfoID = 1, Name = "Some organization" },
                 new ServiceProvider { ContactInfoID = 2, Name = "Some other organization" },
             };
+
+            serviceProviders.ForEach(t => context.ServiceProviders.Add(t));
+            context.SaveChanges();
         }
 
         private static void PopulateContactInfos(ReentryContext context)

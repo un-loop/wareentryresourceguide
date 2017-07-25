@@ -20,7 +20,13 @@ namespace WaReentryResourceGuide.Controllers
         // GET: api/ServiceProviders
         public IQueryable<ServiceProvider> GetServiceProviders()
         {
-            return db.ServiceProviders;
+            return db.ServiceProviders
+                .Include(t => t.CountiesServed)
+                .Include(t => t.Excluded)
+                .Include(t => t.Owners)
+                .Include(t => t.QualityFlags)
+                .Include(t => t.ResourcesProvided)
+                .Include(t => t.Supported);
         }
 
         // GET: api/ServiceProviders/5

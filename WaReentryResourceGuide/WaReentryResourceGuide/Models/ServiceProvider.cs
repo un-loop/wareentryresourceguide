@@ -14,7 +14,7 @@ namespace WaReentryResourceGuide.Models
         public virtual ICollection<County> CountiesServed { get; set; }
         public virtual ICollection<QualityFlag> QualityFlags { get; set; }
 
-        public virtual ICollection<AdminNote> AdminNotes { get; set; }
+       // public virtual ICollection<AdminNote> AdminNotes { get; set; }
 
         public virtual ICollection<Person> Owners { get; set; }
 
