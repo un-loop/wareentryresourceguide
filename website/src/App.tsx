@@ -5,8 +5,8 @@ import Organization from "./Organization";
 
 const organizations = new Array<Organization>(
   new Organization(
-    "My cool organization",
-    new Array<string>("King", "Benton"),
+    "My cool King county organization",
+    new Array<string>("King"),
     "1234 Fake Address St, Seattle WA, 98103",
     "(555) 555-1234",
     "www.fakewebsite.com",
@@ -15,8 +15,8 @@ const organizations = new Array<Organization>(
     new Array<string>("Fake stuff."),
   ),
   new Organization(
-    "My cool organization",
-    new Array<string>("King", "Benton"),
+    "My cool Benton county organization",
+    new Array<string>("Benton"),
     "1234 Fake Address St, Seattle WA, 98103",
     "(555) 555-1234",
     "www.fakewebsite.com",

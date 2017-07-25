@@ -50,12 +50,19 @@ export default class App extends React.Component<IFilterableOrganizationList, IF
           </Row>
           <Row>
             <Col>
-              <OrganizationList organizations={this.props.organizations}/>
+              <OrganizationList organizations={this.getFilteredOrganizations()}/>
             </Col>
           </Row>
         </Grid>
       </div>
     );
+  }
+
+  private getFilteredOrganizations(): Organization[] {
+    return this.props.organizations.filter(
+      (organization) => organization.countiesServed.some((
+        countyServed) => this.state.selectedCounties.some(
+          (selectedCounty) => selectedCounty === countyServed)));
   }
 
   private handleCountiesFilterChange(selectedCounties: string[]) {
