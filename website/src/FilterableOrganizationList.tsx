@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Col, Grid, Row } from "react-bootstrap";
 import CountyFilter from "./CountyFilter";
+import {Gender} from "./Gender";
 import GenderFilterSelect from "./GenderFilterSelect";
 import Organization from "./Organization";
 import OrganizationList from "./OrganizationList";
@@ -15,11 +16,6 @@ interface IFilterableOrganizationState {
     selectedCounties: string[];
 }
 
-enum Gender {
-    Male,
-    Female,
-}
-
 export default class App extends React.Component<IFilterableOrganizationList, IFilterableOrganizationState> {
   private counties: string[] = new Array<string>("Benton", "King");
 
@@ -27,6 +23,7 @@ export default class App extends React.Component<IFilterableOrganizationList, IF
     super(props, state);
     this.state = {genderSelection: Gender.Male, selectedCounties: new Array<string>()};
     this.handleCountiesFilterChange = this.handleCountiesFilterChange.bind(this);
+    this.handleGenderFilterChange = this.handleGenderFilterChange.bind(this);
   }
 
   public render() {
@@ -42,7 +39,10 @@ export default class App extends React.Component<IFilterableOrganizationList, IF
               />
             </Col>
             <Col sm={12} md={5}>
-              <GenderFilterSelect/>
+              <GenderFilterSelect
+                onChange={this.handleGenderFilterChange}
+                gender={this.state.genderSelection}
+              />
             </Col>
             <Col sm={12} md={5}>
               <ServiceFilterSelect/>
@@ -60,12 +60,31 @@ export default class App extends React.Component<IFilterableOrganizationList, IF
 
   private getFilteredOrganizations(): Organization[] {
     return this.props.organizations.filter(
-      (organization) => organization.countiesServed.some((
-        countyServed) => this.state.selectedCounties.some(
-          (selectedCounty) => selectedCounty === countyServed)));
+      (organization) => !this.shouldBeFilteredByCounty(organization) && !this.shouldBeFilteredByGender(organization));
+  }
+
+  private shouldBeFilteredByCounty(organization: Organization): boolean {
+    return this.state.selectedCounties.some(() => true) &&
+    !organization.countiesServed
+      .some((countyServed) => this.state.selectedCounties
+      .some((selectedCounty) => selectedCounty === countyServed));
+  }
+
+  private shouldBeFilteredByGender(organization: Organization): boolean {
+    if (this.state.genderSelection === Gender.Male) {
+      return organization.servesMale === false;
+    }
+    if (this.state.genderSelection === Gender.Female) {
+      return organization.servesFemale === false;
+    }
+    return false;
   }
 
   private handleCountiesFilterChange(selectedCounties: string[]) {
     this.setState({ selectedCounties });
+  }
+
+  private handleGenderFilterChange(genderSelection: Gender) {
+    this.setState({ genderSelection });
   }
 }

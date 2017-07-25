@@ -25,7 +25,7 @@ const organizations = new Array<Organization>(
     new Array<string>("Fake stuff."),
   ),
   new Organization(
-    "My cool organization",
+    "My male only cool organization",
     new Array<string>("King", "Benton"),
     "1234 Fake Address St, Seattle WA, 98103",
     "(555) 555-1234",
@@ -33,9 +33,11 @@ const organizations = new Array<Organization>(
     "fakeemail@fake.com",
     "A fake organization.",
     new Array<string>("Fake stuff."),
+    true,
+    false,
   ),
   new Organization(
-    "My cool organization",
+    "My female only cool organization",
     new Array<string>("King", "Benton"),
     "1234 Fake Address St, Seattle WA, 98103",
     "(555) 555-1234",
@@ -43,6 +45,8 @@ const organizations = new Array<Organization>(
     "fakeemail@fake.com",
     "A fake organization.",
     new Array<string>("Fake stuff."),
+    false,
+    true,
   ),
   new Organization(
     "My cool organization",

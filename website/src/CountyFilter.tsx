@@ -34,14 +34,14 @@ export default class CountyFilter extends React.Component<ICountyFilterProps, {}
 
   private getCountyCheckboxes(): JSX.Element[] {
     return this.props.counties.map((county) =>
-                  (
-                  <CountyCheckbox
-                    county={county}
-                    checked={this.props.selectedCounties.some((selectedCounty) => selectedCounty === county)}
-                    onCheck={this.onCountySelected}
-                    onUncheck={this.onCountyUnselected}
-                  />
-                  ),
-              );
+      (
+        <CountyCheckbox
+          county={county}
+          checked={this.props.selectedCounties.some((selectedCounty) => selectedCounty === county)}
+          onCheck={this.onCountySelected}
+          onUncheck={this.onCountyUnselected}
+        />
+      ),
+    );
   }
 }

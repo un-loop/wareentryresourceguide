@@ -7,6 +7,8 @@ export default class Organization {
     public email: string;
     public description: string;
     public serviceTags: string[];
+    public servesMale: boolean;
+    public servesFemale: boolean;
 
     public constructor(
         name: string,
@@ -16,7 +18,9 @@ export default class Organization {
         website: string,
         email: string,
         description: string,
-        serviceTags: string[]
+        serviceTags: string[],
+        servesMale: boolean = true,
+        servesFemale: boolean =true,
     ) {
         this.name = name;
         this.countiesServed = countiesServed;
@@ -26,5 +30,7 @@ export default class Organization {
         this.email = email;
         this.description = description;
         this.serviceTags = serviceTags;
+        this.servesMale = servesMale;
+        this.servesFemale = servesFemale;
     }
 }
