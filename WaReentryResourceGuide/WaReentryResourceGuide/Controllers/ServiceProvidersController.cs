@@ -18,15 +18,40 @@ namespace WaReentryResourceGuide.Controllers
         private ReentryContext db = new ReentryContext();
 
         // GET: api/ServiceProviders
-        public IQueryable<ServiceProvider> GetServiceProviders()
+        public IQueryable<ServiceProviderDTO> GetServiceProviders()
         {
-            return db.ServiceProviders
-                .Include(t => t.CountiesServed)
-                .Include(t => t.Excluded)
-                .Include(t => t.Owners)
-                .Include(t => t.QualityFlags)
-                .Include(t => t.ResourcesProvided)
-                .Include(t => t.Supported);
+            var serviceProviders = db.ServiceProviders
+                            .Include(t => t.ContactInfo)
+                            .Include(t => t.CountiesServed)
+                            .Include(t => t.Excluded)
+                            .Include(t => t.Owners)
+                            .Include(t => t.QualityFlags)
+                            .Include(t => t.ResourcesProvided)
+                            .Include(t => t.Supported);
+
+            List<ServiceProviderDTO> dtos = new List<ServiceProviderDTO>();
+            foreach (var serviceProvider in serviceProviders)
+            {
+                var dto = new ServiceProviderDTO()
+                {
+                    Name = serviceProvider.Name,
+                    Description = serviceProvider.Description,
+                    PhoneNumber = serviceProvider.ContactInfo?.PhoneNumber,
+                    Email = serviceProvider.ContactInfo?.EmailAddress,
+                    Website = serviceProvider.ContactInfo?.WebAddress,
+                    Address = serviceProvider.ContactInfo?.PostalAddress,
+                    GenderApplicability = new List<bool>
+                            {
+                                serviceProvider.Supported?.Any(t => t.Attribute == EligibilityCategory.Male) ?? false,
+                                serviceProvider.Supported?.Any(t => t.Attribute == EligibilityCategory.Female) ?? false,
+                            }.ToArray(),
+                    County = serviceProvider.CountiesServed.FirstOrDefault()?.Name
+                };
+
+                dtos.Add(dto);
+            }
+            
+            return dtos.AsQueryable<ServiceProviderDTO>();
         }
 
         // GET: api/ServiceProviders/5
