@@ -1,14 +1,47 @@
 import * as React from "react";
-import { Checkbox, ControlLabel, FormGroup } from "react-bootstrap";
+import { ControlLabel, FormGroup } from "react-bootstrap";
+import CountyCheckbox from "./CountyCheckbox";
 
-export default class CountyFilter extends React.Component<{}, {}> {
+interface ICountyFilterProps {
+  onChange: (selectedCounties: string[]) => void;
+  selectedCounties: string[];
+  counties: string[];
+}
+
+export default class CountyFilter extends React.Component<ICountyFilterProps, {}> {
+  public constructor(props: ICountyFilterProps) {
+    super(props);
+    this.onCountySelected = this.onCountySelected.bind(this);
+    this.onCountyUnselected = this.onCountyUnselected.bind(this);
+  }
+
   public render() {
     return (
          <FormGroup>
             <ControlLabel>County</ControlLabel>
-            <Checkbox value="King">King</Checkbox>
-            <Checkbox value="Benton">Benton</Checkbox>
+            {this.getCountyCheckboxes()}
         </FormGroup>
     );
+  }
+
+  public onCountySelected(county: string) {
+    this.props.onChange(this.props.selectedCounties.concat(county));
+  }
+
+  public onCountyUnselected(county: string) {
+    this.props.onChange(this.props.selectedCounties.filter((selectedCounty) => selectedCounty !== county));
+  }
+
+  private getCountyCheckboxes(): JSX.Element[] {
+    return this.props.counties.map((county) =>
+                  (
+                  <CountyCheckbox
+                    county={county}
+                    checked={this.props.selectedCounties.some((selectedCounty) => selectedCounty === county)}
+                    onCheck={this.onCountySelected}
+                    onUncheck={this.onCountyUnselected}
+                  />
+                  ),
+              );
   }
 }
