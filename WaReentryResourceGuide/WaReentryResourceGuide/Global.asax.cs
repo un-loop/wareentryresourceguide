@@ -29,8 +29,6 @@ namespace WaReentryResourceGuide
                 Newtonsoft.Json.PreserveReferencesHandling.All;
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<ReentryContext, WaReentryResourceGuide.Migrations.Configuration>());
-
-
             // Database.SetInitializer(new ReentryInitializer());
 
         }
