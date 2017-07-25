@@ -9,6 +9,9 @@ using System.Web.Routing;
 
 namespace WaReentryResourceGuide
 {
+    using System.Data.Entity;
+    using DAL;
+
     public class WebApiApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
@@ -18,6 +21,8 @@ namespace WaReentryResourceGuide
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            Database.SetInitializer(new ReentryInitializer()); 
         }
     }
 }
