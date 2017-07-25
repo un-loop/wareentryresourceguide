@@ -6,6 +6,9 @@ using WaReentryResourceGuide.Models;
 
 namespace WaReentryResourceGuide.DAL
 {
+    using System.Data.Entity;
+    using WebGrease.Css.Extensions;
+
     public class ReentryInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<ReentryContext>
     {
         protected override void Seed(ReentryContext context)
