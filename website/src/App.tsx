@@ -1,10 +1,7 @@
 import * as React from "react";
 import { Col, Grid, Row } from "react-bootstrap";
-import CountyFilterSelect from "./CountyFilterSelect";
-import GenderFilterSelect from "./GenderFilterSelect";
+import FilterableOrganizationList from "./FilterableOrganizationList";
 import Organization from "./Organization";
-import OrganizationList from "./OrganizationList";
-import ServiceFilterSelect from "./ServiceFilterSelect";
 
 const organizations = new Array<Organization>(
   new Organization(
@@ -59,34 +56,23 @@ const organizations = new Array<Organization>(
   ),
 );
 
-class App extends React.Component<{}, {}> {
+export default class App extends React.Component<{}, {}> {
   public render() {
     return (
       <div>
-      <Grid>
-        <Row>
-          <h1>Washington Re-entry Connect</h1>
-        </Row>
-        <Row>
-          <Col sm={12} md={4}>
-            <CountyFilterSelect/>
-          </Col>
-          <Col sm={12} md={4}>
-            <GenderFilterSelect/>
-          </Col>
-          <Col sm={12} md={4}>
-            <ServiceFilterSelect/>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <OrganizationList organizations={organizations}/>
-          </Col>
-        </Row>
-      </Grid>
+        <Grid>
+          <Row>
+            <Col sm={12} md={12}>
+              <h1>Washington Re-entry Connect</h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={12} md={12}>
+              <FilterableOrganizationList organizations={organizations}/>
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }
 }
-
-export default App;
