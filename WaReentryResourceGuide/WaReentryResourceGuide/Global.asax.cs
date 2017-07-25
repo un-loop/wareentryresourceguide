@@ -11,6 +11,7 @@ namespace WaReentryResourceGuide
 {
     using System.Data.Entity;
     using DAL;
+    using System.Configuration;
 
     public class WebApiApplication : System.Web.HttpApplication
     {
@@ -27,7 +28,10 @@ namespace WaReentryResourceGuide
             json.SerializerSettings.PreserveReferencesHandling =
                 Newtonsoft.Json.PreserveReferencesHandling.All;
 
-            Database.SetInitializer(new ReentryInitializer());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ReentryContext, WaReentryResourceGuide.Migrations.Configuration>());
+
+
+            // Database.SetInitializer(new ReentryInitializer());
 
         }
     }

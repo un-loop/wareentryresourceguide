@@ -219,6 +219,10 @@
     <Compile Include="Migrations\201707251955207_InitialCreate.Designer.cs">
       <DependentUpon>201707251955207_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707252245438_AddDesc.cs" />
+    <Compile Include="Migrations\201707252245438_AddDesc.Designer.cs">
+      <DependentUpon>201707252245438_AddDesc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminNote.cs" />
     <Compile Include="Models\ContactInfo.cs" />
@@ -228,6 +232,7 @@
     <Compile Include="Models\QualityFlag.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\ServiceProvider.cs" />
+    <Compile Include="Models\ServiceProviderDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -305,6 +310,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201707251955207_InitialCreate.resx">
       <DependentUpon>201707251955207_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707252245438_AddDesc.resx">
+      <DependentUpon>201707252245438_AddDesc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
