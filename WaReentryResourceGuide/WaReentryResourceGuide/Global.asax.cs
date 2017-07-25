@@ -27,7 +27,8 @@ namespace WaReentryResourceGuide
             json.SerializerSettings.PreserveReferencesHandling =
                 Newtonsoft.Json.PreserveReferencesHandling.All;
 
-	Database.SetInitializer(new ReentryInitializer()); 
+            Database.SetInitializer(new ReentryInitializer());
 
         }
     }
+}
