@@ -26,7 +26,7 @@ namespace WaReentryResourceGuide
 
             var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
             json.SerializerSettings.PreserveReferencesHandling =
-                Newtonsoft.Json.PreserveReferencesHandling.All;
+                Newtonsoft.Json.PreserveReferencesHandling.None;
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<ReentryContext, WaReentryResourceGuide.Migrations.Configuration>());
             // Database.SetInitializer(new ReentryInitializer());
