@@ -1,16 +1,13 @@
 import * as React from "react";
 import { Button, Checkbox, Col, FormGroup, Grid, Modal, Radio, Row } from "react-bootstrap";
-import CountyFilterSelect from "./CountyFilterSelect";
-import GenderFilterSelect from "./GenderFilterSelect";
+import FilterableOrganizationList from "./FilterableOrganizationList";
 import "./modal.css";
 import Organization from "./Organization";
-import OrganizationList from "./OrganizationList";
-import ServiceFilterSelect from "./ServiceFilterSelect";
 
 const organizations = new Array<Organization>(
   new Organization(
-    "My cool organization",
-    new Array<string>("King", "Benton"),
+    "My cool King county organization",
+    new Array<string>("King"),
     "1234 Fake Address St, Seattle WA, 98103",
     "(555) 555-1234",
     "www.fakewebsite.com",
@@ -19,8 +16,8 @@ const organizations = new Array<Organization>(
     new Array<string>("Fake stuff."),
   ),
   new Organization(
-    "My cool organization",
-    new Array<string>("King", "Benton"),
+    "My cool Benton county organization",
+    new Array<string>("Benton"),
     "1234 Fake Address St, Seattle WA, 98103",
     "(555) 555-1234",
     "www.fakewebsite.com",
@@ -29,7 +26,7 @@ const organizations = new Array<Organization>(
     new Array<string>("Fake stuff."),
   ),
   new Organization(
-    "My cool organization",
+    "My male only cool organization",
     new Array<string>("King", "Benton"),
     "1234 Fake Address St, Seattle WA, 98103",
     "(555) 555-1234",
@@ -37,9 +34,11 @@ const organizations = new Array<Organization>(
     "fakeemail@fake.com",
     "A fake organization.",
     new Array<string>("Fake stuff."),
+    true,
+    false,
   ),
   new Organization(
-    "My cool organization",
+    "My female only cool organization",
     new Array<string>("King", "Benton"),
     "1234 Fake Address St, Seattle WA, 98103",
     "(555) 555-1234",
@@ -47,6 +46,8 @@ const organizations = new Array<Organization>(
     "fakeemail@fake.com",
     "A fake organization.",
     new Array<string>("Fake stuff."),
+    false,
+    true,
   ),
   new Organization(
     "My cool organization",
@@ -75,41 +76,18 @@ class App extends React.Component<{}, IAppState> {
     this.close = this.close.bind(this);
     this.updateCounter = this.updateCounter.bind(this);
   }
-
-  public updateCounter(event: Event) {
-    const input = event.target as HTMLInputElement;
-    if (input.checked) {
-      this.setState({ counter: this.state.counter + 1 });
-    } else {
-      this.setState({ counter: this.state.counter - 1 });
-    }
-  }
-
-  public close() {
-    this.setState({ showModal: false });
-  }
-
   public render() {
     return (
       <div>
         <Grid>
           <Row>
-            <h1>Washington Re-entry Connect</h1>
-          </Row>
-          <Row>
-            <Col sm={12} md={4}>
-              <CountyFilterSelect />
-            </Col>
-            <Col sm={12} md={4}>
-              <GenderFilterSelect />
-            </Col>
-            <Col sm={12} md={4}>
-              <ServiceFilterSelect />
+            <Col sm={12} md={12}>
+              <h1>Washington Re-entry Connect</h1>
             </Col>
           </Row>
           <Row>
-            <Col>
-              <OrganizationList organizations={organizations} />
+            <Col sm={12} md={12}>
+              <FilterableOrganizationList organizations={organizations}/>
             </Col>
           </Row>
         </Grid>
@@ -186,6 +164,19 @@ class App extends React.Component<{}, IAppState> {
         </Modal>;
       </div>
     );
+  }
+
+  public updateCounter(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.checked) {
+      this.setState({ counter: this.state.counter + 1 });
+    } else {
+      this.setState({ counter: this.state.counter - 1 });
+    }
+  }
+
+  public close() {
+    this.setState({ showModal: false });
   }
 }
 
