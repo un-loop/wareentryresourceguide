@@ -22,6 +22,7 @@ namespace WaReentryResourceGuide.Models
         public GenderApplicability GenderApplicability { get; set; }
         public string County { get; set; }
 
+        public string[] ServiceTags { get; set; }
         public int ID { get; set; }
     }
 }

@@ -6,6 +6,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WaReentryResourceGuide.DAL;
@@ -24,7 +25,6 @@ namespace WaReentryResourceGuide.Controllers
                             .Include(t => t.Excluded)
                             .Include(t => t.Owners)
                             .Include(t => t.QualityFlags)
-                            .Include(t => t.ResourcesProvided)
                             .Include(t => t.Supported);
 
             List<ServiceProviderDTO> dtos = new List<ServiceProviderDTO>();
@@ -148,6 +148,7 @@ namespace WaReentryResourceGuide.Controllers
                     Female = serviceProvider.Supported?.Any(t => t.Attribute == EligibilityCategory.Female) ?? false,
                 },
                 County = serviceProvider.County,
+                ServiceTags = serviceProvider.ServicesProvided?.Split(new char[] { ',' }),
             };
         }
 
@@ -165,6 +166,18 @@ namespace WaReentryResourceGuide.Controllers
                 County = serviceProviderDto.County,
                 Supported = new List<EligibilityAttribute>(),
             };
+
+            if (serviceProviderDto.ServiceTags != null)
+            {
+                List<string> categories = new List<string>();
+                foreach (var tag in serviceProviderDto.ServiceTags)
+                {
+                    var category = (ResourceCategory)Enum.Parse(typeof(ResourceCategory), tag);
+                    categories.Add(category.ToString());
+                }
+
+                sp.ServicesProvided = string.Join(",", categories);
+            }
 
             if (serviceProviderDto.GenderApplicability?.Male ?? false)
             {
