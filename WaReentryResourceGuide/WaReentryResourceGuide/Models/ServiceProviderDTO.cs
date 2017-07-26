@@ -5,6 +5,12 @@ using System.Web;
 
 namespace WaReentryResourceGuide.Models
 {
+    public class GenderApplicability
+    {
+        public bool Male { get; set; }
+        public bool Female { get; set; }
+    }
+
     public class ServiceProviderDTO
     {
         public string Name { get; set; }
@@ -13,7 +19,9 @@ namespace WaReentryResourceGuide.Models
         public string Address { get; set; }
         public string Email { get; set; }
         public string Website { get; set; }
-        public bool[] GenderApplicability { get; set; }
+        public GenderApplicability GenderApplicability { get; set; }
         public string County { get; set; }
+
+        public int ID { get; set; }
     }
 }

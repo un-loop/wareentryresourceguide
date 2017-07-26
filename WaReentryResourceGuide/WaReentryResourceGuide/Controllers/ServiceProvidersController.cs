@@ -32,30 +32,15 @@ namespace WaReentryResourceGuide.Controllers
             List<ServiceProviderDTO> dtos = new List<ServiceProviderDTO>();
             foreach (var serviceProvider in serviceProviders)
             {
-                var dto = new ServiceProviderDTO()
-                {
-                    Name = serviceProvider.Name,
-                    Description = serviceProvider.Description,
-                    PhoneNumber = serviceProvider.ContactInfo?.PhoneNumber,
-                    Email = serviceProvider.ContactInfo?.EmailAddress,
-                    Website = serviceProvider.ContactInfo?.WebAddress,
-                    Address = serviceProvider.ContactInfo?.PostalAddress,
-                    GenderApplicability = new List<bool>
-                            {
-                                serviceProvider.Supported?.Any(t => t.Attribute == EligibilityCategory.Male) ?? false,
-                                serviceProvider.Supported?.Any(t => t.Attribute == EligibilityCategory.Female) ?? false,
-                            }.ToArray(),
-                    County = serviceProvider.CountiesServed.FirstOrDefault()?.Name
-                };
-
+                ServiceProviderDTO dto = CreateDTO(serviceProvider);
                 dtos.Add(dto);
             }
-            
+
             return dtos.AsQueryable<ServiceProviderDTO>();
         }
 
         // GET: api/ServiceProviders/5
-        [ResponseType(typeof(ServiceProvider))]
+        [ResponseType(typeof(ServiceProviderDTO))]
         public IHttpActionResult GetServiceProvider(int id)
         {
             ServiceProvider serviceProvider = db.ServiceProviders.Find(id);
@@ -64,22 +49,24 @@ namespace WaReentryResourceGuide.Controllers
                 return NotFound();
             }
 
-            return Ok(serviceProvider);
+            return Ok(CreateDTO(serviceProvider));
         }
 
         // PUT: api/ServiceProviders/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutServiceProvider(int id, ServiceProvider serviceProvider)
+        public IHttpActionResult PutServiceProvider(int id, ServiceProviderDTO serviceProviderDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != serviceProvider.ID)
+            if (id != serviceProviderDto.ID)
             {
                 return BadRequest();
             }
+
+            var serviceProvider = CreateServiceProvider(serviceProviderDto);
 
             db.Entry(serviceProvider).State = EntityState.Modified;
 
@@ -103,18 +90,22 @@ namespace WaReentryResourceGuide.Controllers
         }
 
         // POST: api/ServiceProviders
-        [ResponseType(typeof(ServiceProvider))]
-        public IHttpActionResult PostServiceProvider(ServiceProvider serviceProvider)
+        [ResponseType(typeof(ServiceProviderDTO))]
+        public IHttpActionResult PostServiceProvider(ServiceProviderDTO serviceProviderDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
+            var serviceProvider = CreateServiceProvider(serviceProviderDto);
+
             db.ServiceProviders.Add(serviceProvider);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = serviceProvider.ID }, serviceProvider);
+            serviceProviderDto.ID = serviceProvider.ID;
+
+            return CreatedAtRoute("DefaultApi", new { id = serviceProvider.ID }, serviceProviderDto);
         }
 
         // DELETE: api/ServiceProviders/5
@@ -140,6 +131,59 @@ namespace WaReentryResourceGuide.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        private static ServiceProviderDTO CreateDTO(ServiceProvider serviceProvider)
+        {
+            return new ServiceProviderDTO()
+            {
+                ID = serviceProvider.ID,
+                Name = serviceProvider.Name,
+                Description = serviceProvider.Description,
+                PhoneNumber = serviceProvider.ContactInfo?.PhoneNumber,
+                Email = serviceProvider.ContactInfo?.EmailAddress,
+                Website = serviceProvider.ContactInfo?.WebAddress,
+                Address = serviceProvider.ContactInfo?.PostalAddress,
+                GenderApplicability = new GenderApplicability
+                {
+                    Male = serviceProvider.Supported?.Any(t => t.Attribute == EligibilityCategory.Male) ?? false,
+                    Female = serviceProvider.Supported?.Any(t => t.Attribute == EligibilityCategory.Female) ?? false,
+                },
+                County = serviceProvider.CountiesServed.FirstOrDefault()?.Name
+            };
+        }
+
+        private static ServiceProvider CreateServiceProvider(ServiceProviderDTO serviceProviderDto)
+        {
+            var sp = new ServiceProvider
+            {
+                Name = serviceProviderDto.Name,
+                Description = serviceProviderDto.Description,
+                ContactInfo = new ContactInfo
+                {
+                    EmailAddress = serviceProviderDto.Email,
+                    PhoneNumber = serviceProviderDto.PhoneNumber,
+                    PostalAddress = serviceProviderDto.Address,
+                    WebAddress = serviceProviderDto.Website,
+                },
+                CountiesServed = new List<County>
+                {
+                    new County { Name = serviceProviderDto.County },
+                },
+                Supported = new List<EligibilityAttribute>(),
+            };
+
+            if (serviceProviderDto.GenderApplicability?.Male ?? false)
+            {
+                sp.Supported.Add(new EligibilityAttribute { Attribute = EligibilityCategory.Male });
+            }
+
+            if (serviceProviderDto.GenderApplicability?.Female ?? false)
+            {
+                sp.Supported.Add(new EligibilityAttribute { Attribute = EligibilityCategory.Female });
+            }
+
+            return sp;
         }
 
         private bool ServiceProviderExists(int id)
