@@ -232,6 +232,10 @@
     <Compile Include="Migrations\201707260132028_FlattenContactInfo.Designer.cs">
       <DependentUpon>201707260132028_FlattenContactInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707261717244_FlattenServices.cs" />
+    <Compile Include="Migrations\201707261717244_FlattenServices.Designer.cs">
+      <DependentUpon>201707261717244_FlattenServices.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminNote.cs" />
     <Compile Include="Models\ContactInfo.cs" />
@@ -329,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707260132028_FlattenContactInfo.resx">
       <DependentUpon>201707260132028_FlattenContactInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707261717244_FlattenServices.resx">
+      <DependentUpon>201707261717244_FlattenServices.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
