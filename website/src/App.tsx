@@ -105,49 +105,49 @@ class App extends React.Component<{}, IAppState> {
                 <Col lg={4}>
                   <h1>I'm looking for services in this county or these counties:</h1>
                   <h4><i>You can select multiple counties if applicable.</i></h4>
-                  <Checkbox onChange={this.updateCounter}>Benton</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Chelan</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Clark</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Cowlitz</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Douglas</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Grant</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Grays Harbor</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Island</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Jefferson</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>King</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Kitsap</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Kittitas</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Lewis</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Mason</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Okanogan</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Pierce</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Snohomish</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Spokane</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Stevens</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Thurston</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Walla Walla</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Whatcom</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Whitman</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Yakima</Checkbox>
+                  <Checkbox>Benton</Checkbox>
+                  <Checkbox>Chelan</Checkbox>
+                  <Checkbox>Clark</Checkbox>
+                  <Checkbox>Cowlitz</Checkbox>
+                  <Checkbox>Douglas</Checkbox>
+                  <Checkbox>Grant</Checkbox>
+                  <Checkbox>Grays Harbor</Checkbox>
+                  <Checkbox>Island</Checkbox>
+                  <Checkbox>Jefferson</Checkbox>
+                  <Checkbox>King</Checkbox>
+                  <Checkbox>Kitsap</Checkbox>
+                  <Checkbox>Kittitas</Checkbox>
+                  <Checkbox>Lewis</Checkbox>
+                  <Checkbox>Mason</Checkbox>
+                  <Checkbox>Okanogan</Checkbox>
+                  <Checkbox>Pierce</Checkbox>
+                  <Checkbox>Snohomish</Checkbox>
+                  <Checkbox>Spokane</Checkbox>
+                  <Checkbox>Stevens</Checkbox>
+                  <Checkbox>Thurston</Checkbox>
+                  <Checkbox>Walla Walla</Checkbox>
+                  <Checkbox>Whatcom</Checkbox>
+                  <Checkbox>Whitman</Checkbox>
+                  <Checkbox>Yakima</Checkbox>
                 </Col>
                 <Col lg={4}>
                   <h1>I'm looking for these services:</h1>
                   <h4><i>You can select multiple services</i></h4>
-                  <Checkbox onChange={this.updateCounter}>Childcare</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Education</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Employment</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Health</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Housing</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Legal</Checkbox>
-                  <Checkbox onChange={this.updateCounter}>Other</Checkbox>
+                  <Checkbox>Childcare</Checkbox>
+                  <Checkbox>Education</Checkbox>
+                  <Checkbox>Employment</Checkbox>
+                  <Checkbox>Health</Checkbox>
+                  <Checkbox>Housing</Checkbox>
+                  <Checkbox>Legal</Checkbox>
+                  <Checkbox>Other</Checkbox>
                 </Col>
                 <Col lg={4}>
                   <h1>I identify as:</h1>
                   <h4>You can only select one</h4>
                   <FormGroup>
-                    <Radio name="radioGroup" onChange={this.updateCounter}>Female</Radio>
-                    <Radio name="radioGroup" onChange={this.updateCounter}>Male</Radio>
-                    <Radio name="radioGroup" onChange={this.updateCounter}>Prefer not to specify</Radio>
+                    <Radio name="radioGroup">Female</Radio>
+                    <Radio name="radioGroup">Male</Radio>
+                    <Radio name="radioGroup">Prefer not to specify</Radio>
                   </FormGroup>
                 </Col>
               </Row>
