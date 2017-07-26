@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, Checkbox, Col, FormGroup, Grid, Modal, Radio, Row } from "react-bootstrap";
+import { Button, Col, FormGroup, Grid, Modal, Row } from "react-bootstrap";
 import FilterableOrganizationList from "./FilterableOrganizationList";
 import "./modal.css";
 import Organization from "./Organization";
@@ -105,50 +105,223 @@ class App extends React.Component<{}, IAppState> {
                 <Col lg={4}>
                   <h1>I'm looking for services in this county or these counties:</h1>
                   <h4><i>You can select multiple counties if applicable.</i></h4>
-                  <Checkbox>Benton</Checkbox>
-                  <Checkbox>Chelan</Checkbox>
-                  <Checkbox>Clark</Checkbox>
-                  <Checkbox>Cowlitz</Checkbox>
-                  <Checkbox>Douglas</Checkbox>
-                  <Checkbox>Grant</Checkbox>
-                  <Checkbox>Grays Harbor</Checkbox>
-                  <Checkbox>Island</Checkbox>
-                  <Checkbox>Jefferson</Checkbox>
-                  <Checkbox>King</Checkbox>
-                  <Checkbox>Kitsap</Checkbox>
-                  <Checkbox>Kittitas</Checkbox>
-                  <Checkbox>Lewis</Checkbox>
-                  <Checkbox>Mason</Checkbox>
-                  <Checkbox>Okanogan</Checkbox>
-                  <Checkbox>Pierce</Checkbox>
-                  <Checkbox>Snohomish</Checkbox>
-                  <Checkbox>Spokane</Checkbox>
-                  <Checkbox>Stevens</Checkbox>
-                  <Checkbox>Thurston</Checkbox>
-                  <Checkbox>Walla Walla</Checkbox>
-                  <Checkbox>Whatcom</Checkbox>
-                  <Checkbox>Whitman</Checkbox>
-                  <Checkbox>Yakima</Checkbox>
+                  <FormGroup>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Benton" type="checkbox" onChange={this.updateCounter} />
+                      Benton
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Chelan" type="checkbox" onChange={this.updateCounter} />
+                      Chelan
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Clark" type="checkbox" onChange={this.updateCounter} />
+                      Clark
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Cowlitz" type="checkbox" onChange={this.updateCounter} />
+                      Cowlitz
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Douglas" type="checkbox" onChange={this.updateCounter} />
+                      Douglas
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Grant" type="checkbox" onChange={this.updateCounter} />
+                      Grant
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Grays Harbor" type="checkbox" onChange={this.updateCounter} />
+                      Grays Harbor
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Island" type="checkbox" onChange={this.updateCounter} />
+                      Island
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Jefferson" type="checkbox" onChange={this.updateCounter} />
+                      Jefferson
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="King" type="checkbox" onChange={this.updateCounter} />
+                      King
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Kitsap" type="checkbox" onChange={this.updateCounter} />
+                      Kitsap
+                    </label>
+                  </div><div className="checkbox">
+                    <label>
+                      <input name="Kittitas" type="checkbox" onChange={this.updateCounter} />
+                      Kittitas
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Lewis" type="checkbox" onChange={this.updateCounter} />
+                      Lewis
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Mason" type="checkbox" onChange={this.updateCounter} />
+                      Mason
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Okanogan" type="checkbox" onChange={this.updateCounter} />
+                      Okanogan
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Pierce" type="checkbox" onChange={this.updateCounter} />
+                      Pierce
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Snohomish" type="checkbox" onChange={this.updateCounter} />
+                      Snohomish
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Spokane" type="checkbox" onChange={this.updateCounter} />
+                      Spokane
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Stevens" type="checkbox" onChange={this.updateCounter} />
+                      Stevens
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Thurston" type="checkbox" onChange={this.updateCounter} />
+                      Thurston
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Walla Walla" type="checkbox" onChange={this.updateCounter} />
+                      Walla Walla
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Whatcom" type="checkbox" onChange={this.updateCounter} />
+                      Whatcom
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Whitman" type="checkbox" onChange={this.updateCounter} />
+                      Whitman
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Yakima" type="checkbox" onChange={this.updateCounter} />
+                      Yakima
+                    </label>
+                  </div>
+                  </FormGroup>
                 </Col>
                 <Col lg={4}>
                   <h1>I'm looking for these services:</h1>
                   <h4><i>You can select multiple services</i></h4>
-                  <Checkbox>Childcare</Checkbox>
-                  <Checkbox>Education</Checkbox>
-                  <Checkbox>Employment</Checkbox>
-                  <Checkbox>Health</Checkbox>
-                  <Checkbox>Housing</Checkbox>
-                  <Checkbox>Legal</Checkbox>
-                  <Checkbox>Other</Checkbox>
+                  <FormGroup>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Childcare" type="checkbox" onChange={this.updateCounter} />
+                      Childcare
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Education" type="checkbox" onChange={this.updateCounter} />
+                      Education
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Employment" type="checkbox" onChange={this.updateCounter} />
+                      Employment
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Health" type="checkbox" onChange={this.updateCounter} />
+                      Health
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Housing" type="checkbox" onChange={this.updateCounter} />
+                      Housing
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Legal" type="checkbox" onChange={this.updateCounter} />
+                      Legal
+                    </label>
+                  </div>
+                  <div className="checkbox">
+                    <label>
+                      <input name="Other" type="checkbox" onChange={this.updateCounter} />
+                      Other
+                    </label>
+                  </div>
+                  </FormGroup>
                 </Col>
                 <Col lg={4}>
                   <h1>I identify as:</h1>
                   <h4>You can only select one</h4>
-                  <FormGroup>
-                    <Radio name="radioGroup">Female</Radio>
-                    <Radio name="radioGroup">Male</Radio>
-                    <Radio name="radioGroup">Prefer not to specify</Radio>
-                  </FormGroup>
+                 <FormGroup>
+                  <div className="radio">
+                    <label>
+                      <input type="radio" value="female" name="gender" onChange={this.updateCounter}/>
+                      Female
+                    </label>
+                  </div>
+                  <div className="radio">
+                    <label>
+                      <input type="radio" value="male" name="gender" onChange={this.updateCounter}/>
+                       Male
+                    </label>
+                  </div>
+                  <div className="radio">
+                    <label>
+                      <input type="radio" value="pnts" name="gender" onChange={this.updateCounter}/>
+                      Prefer not to specify
+                    </label>
+                  </div>
+                </FormGroup>
                 </Col>
               </Row>
               <Row>
@@ -166,7 +339,7 @@ class App extends React.Component<{}, IAppState> {
     );
   }
 
-  public updateCounter(event: Event) {
+  public updateCounter(event: any) {
     const input = event.target as HTMLInputElement;
     if (input.checked) {
       this.setState({ counter: this.state.counter + 1 });
