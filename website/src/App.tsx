@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, Checkbox, Col, Grid, Modal, Radio, Row } from "react-bootstrap";
+import { Button, Checkbox, Col, FormGroup, Grid, Modal, Radio, Row } from "react-bootstrap";
 import CountyFilterSelect from "./CountyFilterSelect";
 import GenderFilterSelect from "./GenderFilterSelect";
 import "./modal.css";
@@ -166,9 +166,11 @@ class App extends React.Component<{}, IAppState> {
                 <Col lg={4}>
                   <h1>I identify as:</h1>
                   <h4>You can only select one</h4>
-                  <Radio>Female</Radio>
-                  <Radio>Male</Radio>
-                  <Radio>Prefer not to specify</Radio>
+                  <FormGroup>
+                    <Radio name="radioGroup" onChange={this.updateCounter}>Female</Radio>
+                    <Radio name="radioGroup" onChange={this.updateCounter}>Male</Radio>
+                    <Radio name="radioGroup" onChange={this.updateCounter}>Prefer not to specify</Radio>
+                  </FormGroup>
                 </Col>
               </Row>
               <Row>
