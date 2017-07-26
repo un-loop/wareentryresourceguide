@@ -21,8 +21,6 @@ namespace WaReentryResourceGuide.Controllers
         public IQueryable<ServiceProviderDTO> GetServiceProviders()
         {
             var serviceProviders = db.ServiceProviders
-                            .Include(t => t.ContactInfo)
-                            .Include(t => t.CountiesServed)
                             .Include(t => t.Excluded)
                             .Include(t => t.Owners)
                             .Include(t => t.QualityFlags)
@@ -140,16 +138,16 @@ namespace WaReentryResourceGuide.Controllers
                 ID = serviceProvider.ID,
                 Name = serviceProvider.Name,
                 Description = serviceProvider.Description,
-                PhoneNumber = serviceProvider.ContactInfo?.PhoneNumber,
-                Email = serviceProvider.ContactInfo?.EmailAddress,
-                Website = serviceProvider.ContactInfo?.WebAddress,
-                Address = serviceProvider.ContactInfo?.PostalAddress,
+                PhoneNumber = serviceProvider.PhoneNumber,
+                Email = serviceProvider.Email,
+                Website = serviceProvider.Website,
+                Address = serviceProvider.Address,
                 GenderApplicability = new GenderApplicability
                 {
                     Male = serviceProvider.Supported?.Any(t => t.Attribute == EligibilityCategory.Male) ?? false,
                     Female = serviceProvider.Supported?.Any(t => t.Attribute == EligibilityCategory.Female) ?? false,
                 },
-                County = serviceProvider.CountiesServed.FirstOrDefault()?.Name
+                County = serviceProvider.County,
             };
         }
 
@@ -157,19 +155,14 @@ namespace WaReentryResourceGuide.Controllers
         {
             var sp = new ServiceProvider
             {
+                ID = serviceProviderDto.ID,
                 Name = serviceProviderDto.Name,
                 Description = serviceProviderDto.Description,
-                ContactInfo = new ContactInfo
-                {
-                    EmailAddress = serviceProviderDto.Email,
-                    PhoneNumber = serviceProviderDto.PhoneNumber,
-                    PostalAddress = serviceProviderDto.Address,
-                    WebAddress = serviceProviderDto.Website,
-                },
-                CountiesServed = new List<County>
-                {
-                    new County { Name = serviceProviderDto.County },
-                },
+                Email = serviceProviderDto.Email,
+                PhoneNumber = serviceProviderDto.PhoneNumber,
+                Address = serviceProviderDto.Address,
+                Website = serviceProviderDto.Website,
+                County = serviceProviderDto.County,
                 Supported = new List<EligibilityAttribute>(),
             };
 
