@@ -22,9 +22,12 @@ export default class GenderFilterSelect extends React.Component<IServiceFilterSe
               onChange={this.handleChange}
               value={this.props.service}
             >
+                <option value="Education">Education</option>
+                <option value="Employment">Employment</option>
+                <option value="Health">Health</option>
                 <option value="Housing">Housing</option>
-                <option value="Other Stuff">Other Stuff</option>
-                <option value="Fake stuff.">Fake stuff.</option>
+                <option value="Legal">Legal</option>
+                <option value="Other">Other</option>
             </FormControl>
         </FormGroup>
     );
