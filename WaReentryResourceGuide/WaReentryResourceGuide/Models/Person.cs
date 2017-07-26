@@ -10,5 +10,7 @@ namespace WaReentryResourceGuide.Models
         public int ID { get; set; }
 
         public int ContactInfoID { get; set; }
+
+        public string email { get; set; }
     }
 }

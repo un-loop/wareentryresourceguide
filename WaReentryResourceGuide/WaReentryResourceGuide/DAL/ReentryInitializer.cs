@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,6 +6,9 @@ using WaReentryResourceGuide.Models;
 
 namespace WaReentryResourceGuide.DAL
 {
+    using System.Data.Entity;
+    using WebGrease.Css.Extensions;
+
     public class ReentryInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<ReentryContext>
     {
         protected override void Seed(ReentryContext context)
@@ -17,9 +20,12 @@ namespace WaReentryResourceGuide.DAL
 
             var serviceProviders = new List<ServiceProvider>
             {
-                new ServiceProvider { ContactInfoID = 1, Name = "Some organization" },
-                new ServiceProvider { ContactInfoID = 2, Name = "Some other organization" },
+                new ServiceProvider { Name = "Some organization" },
+                new ServiceProvider { Name = "Some other organization" },
             };
+
+            serviceProviders.ForEach(t => context.ServiceProviders.Add(t));
+            context.SaveChanges();
         }
 
         private static void PopulateContactInfos(ReentryContext context)

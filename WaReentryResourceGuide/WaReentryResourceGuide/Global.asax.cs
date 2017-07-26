@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +9,10 @@ using System.Web.Routing;
 
 namespace WaReentryResourceGuide
 {
+    using System.Data.Entity;
+    using DAL;
+    using System.Configuration;
+
     public class WebApiApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
@@ -18,6 +22,15 @@ namespace WaReentryResourceGuide
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+
+            var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+            json.SerializerSettings.PreserveReferencesHandling =
+                Newtonsoft.Json.PreserveReferencesHandling.None;
+
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ReentryContext, WaReentryResourceGuide.Migrations.Configuration>());
+            // Database.SetInitializer(new ReentryInitializer());
+
         }
     }
 }
