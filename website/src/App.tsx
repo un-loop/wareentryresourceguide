@@ -32,7 +32,7 @@ const organizations = new Array<Organization>(
     "www.fakewebsite.com",
     "fakeemail@fake.com",
     "A fake organization.",
-    new Array<string>("Fake stuff."),
+    new Array<string>("Real stuff."),
     true,
     false,
   ),
