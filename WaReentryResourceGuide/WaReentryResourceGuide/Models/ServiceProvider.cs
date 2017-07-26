@@ -26,7 +26,10 @@ namespace WaReentryResourceGuide.Models
 
         public virtual ICollection<Person> Owners { get; set; }
 
-        public virtual ICollection<Service> ResourcesProvided { get; set; }
+        //public virtual ICollection<Service> ResourcesProvided { get; set; }
+        
+        // Comma-separated list of ResourceCategory enum values
+        public string ServicesProvided { get; set; }
 
         public virtual ICollection<EligibilityAttribute> Supported { get; set; }
 
