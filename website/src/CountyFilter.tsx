@@ -26,11 +26,11 @@ export default class CountyFilter extends React.Component<ICountyFilterProps, {}
 
   public onCountySelected(county: string) {
     this.props.onChange(this.props.selectedCounties.concat(county));
-  }
+   }
 
   public onCountyUnselected(county: string) {
     this.props.onChange(this.props.selectedCounties.filter((selectedCounty) => selectedCounty !== county));
-  }
+   }
 
   private getCountyCheckboxes(): JSX.Element[] {
     return this.props.counties.map((county) =>

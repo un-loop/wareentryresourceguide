@@ -18,7 +18,30 @@ interface IFilterableOrganizationState {
 }
 
 export default class App extends React.Component<IFilterableOrganizationList, IFilterableOrganizationState> {
-  private counties: string[] = new Array<string>("Benton", "King");
+  private counties: string[] = new Array<string>("Benton",
+"Chelan",
+"Clark",
+"Cowlitz",
+"Douglas",
+"Grant",
+"Grays Harbor",
+"Island",
+"Jefferson",
+"King",
+"Kitsap",
+"Kittitas",
+"Lewis",
+"Mason",
+"Okanogan",
+"Pierce",
+"Snohomish",
+"Spokane",
+"Stevens",
+"Thurston",
+"Walla Walla",
+"Whatcom",
+"Whitman",
+"Yakima");
 
   public constructor(props: IFilterableOrganizationList, state: IFilterableOrganizationState ) {
     super(props, state);
@@ -33,20 +56,20 @@ export default class App extends React.Component<IFilterableOrganizationList, IF
       <div>
         <Grid>
           <Row>
-            <Col sm={12} md={2}>
+            <Col sm={12} md={4}>
               <CountyFilter
                 onChange={this.handleCountiesFilterChange}
                 counties={this.counties}
                 selectedCounties={this.state.selectedCounties}
               />
             </Col>
-            <Col sm={12} md={5}>
+            <Col sm={12} md={4}>
               <GenderFilterSelect
                 onChange={this.handleGenderFilterChange}
                 gender={this.state.selectedGender}
               />
             </Col>
-            <Col sm={12} md={5}>
+            <Col sm={12} md={4}>
               <ServiceFilterSelect
                 onChange={this.handleServiceFilterChange}
                 service={this.state.selectedService}
@@ -74,6 +97,7 @@ export default class App extends React.Component<IFilterableOrganizationList, IF
 
   private shouldBeFilteredByCounty(organization: Organization): boolean {
     return this.state.selectedCounties.some(() => true) &&
+    !organization.countiesServed.some((county) => county === "All") &&
     !organization.countiesServed
       .some((countyServed) => this.state.selectedCounties
       .some((selectedCounty) => selectedCounty === countyServed));
