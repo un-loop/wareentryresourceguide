@@ -223,6 +223,14 @@
     <Compile Include="Migrations\201707252245438_AddDesc.Designer.cs">
       <DependentUpon>201707252245438_AddDesc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707260125428_SingleCounty.cs" />
+    <Compile Include="Migrations\201707260125428_SingleCounty.Designer.cs">
+      <DependentUpon>201707260125428_SingleCounty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707260132028_FlattenContactInfo.cs" />
+    <Compile Include="Migrations\201707260132028_FlattenContactInfo.Designer.cs">
+      <DependentUpon>201707260132028_FlattenContactInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminNote.cs" />
     <Compile Include="Models\ContactInfo.cs" />
@@ -313,6 +321,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707252245438_AddDesc.resx">
       <DependentUpon>201707252245438_AddDesc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707260125428_SingleCounty.resx">
+      <DependentUpon>201707260125428_SingleCounty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707260132028_FlattenContactInfo.resx">
+      <DependentUpon>201707260132028_FlattenContactInfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

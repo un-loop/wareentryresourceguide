@@ -20,8 +20,8 @@ namespace WaReentryResourceGuide.DAL
 
             var serviceProviders = new List<ServiceProvider>
             {
-                new ServiceProvider { ContactInfoID = 1, Name = "Some organization" },
-                new ServiceProvider { ContactInfoID = 2, Name = "Some other organization" },
+                new ServiceProvider { Name = "Some organization" },
+                new ServiceProvider { Name = "Some other organization" },
             };
 
             serviceProviders.ForEach(t => context.ServiceProviders.Add(t));
