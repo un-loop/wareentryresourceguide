@@ -83,7 +83,8 @@ interface IAppState {
 }
 
 class App extends React.Component<{}, IAppState> {
-  constructor() {
+  constructor()
+  {
     super();
     this.state = {
       counter: 0,
@@ -92,7 +93,8 @@ class App extends React.Component<{}, IAppState> {
     this.close = this.close.bind(this);
     this.updateCounter = this.updateCounter.bind(this);
   }
-  public render() {
+  public render()
+  {
     return (
       <div>
         <Grid>
@@ -355,16 +357,21 @@ class App extends React.Component<{}, IAppState> {
     );
   }
 
-  public updateCounter(event: any) {
+  public updateCounter(event: any)
+  {
     const input = event.target as HTMLInputElement;
-    if (input.checked) {
+    if (input.checked)
+    {
       this.setState({ counter: this.state.counter + 1 });
-    } else {
+    }
+    else
+    {
       this.setState({ counter: this.state.counter - 1 });
     }
   }
 
-  public close() {
+  public close()
+  {
     this.setState({ showModal: false });
   }
 }

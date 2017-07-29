@@ -1,3 +1,19 @@
 {
-    "extends": ["tslint:recommended", "tslint-react"]
+    "extends": [
+        "tslint:recommended",
+        "tslint-react",
+        "tslint-eslint-rules"
+    ],
+    "rules": {
+        "one-line": [
+            false
+        ],
+        "brace-style": [
+            true,
+            "allman",
+            {
+                "allowSingleLine": true
+            }
+        ]
+    }
 }

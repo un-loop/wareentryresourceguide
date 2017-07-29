@@ -7,11 +7,13 @@ import Organization from "./Organization";
 import OrganizationList from "./OrganizationList";
 import ServiceFilterSelect from "./ServiceFilterSelect";
 
-interface IFilterableOrganizationList {
+interface IFilterableOrganizationList
+{
     organizations: Organization[];
 }
 
-interface IFilterableOrganizationState {
+interface IFilterableOrganizationState
+{
     selectedGender: Gender;
     selectedCounties: string[];
     selectedService: string;
@@ -43,7 +45,8 @@ export default class App extends React.Component<IFilterableOrganizationList, IF
 "Whitman",
 "Yakima");
 
-  public constructor(props: IFilterableOrganizationList, state: IFilterableOrganizationState ) {
+  public constructor(props: IFilterableOrganizationList, state: IFilterableOrganizationState )
+  {
     super(props, state);
     this.state = {selectedGender: Gender.Male, selectedCounties: new Array<string>(), selectedService: "None"};
     this.handleCountiesFilterChange = this.handleCountiesFilterChange.bind(this);
@@ -51,7 +54,8 @@ export default class App extends React.Component<IFilterableOrganizationList, IF
     this.handleServiceFilterChange = this.handleServiceFilterChange.bind(this);
   }
 
-  public render() {
+  public render()
+  {
     return (
       <div>
         <Grid>
@@ -86,7 +90,8 @@ export default class App extends React.Component<IFilterableOrganizationList, IF
     );
   }
 
-  private getFilteredOrganizations(): Organization[] {
+  private getFilteredOrganizations(): Organization[]
+  {
     return this.props.organizations.filter(
       (organization) =>
       !this.shouldBeFilteredByCounty(organization)
@@ -95,7 +100,8 @@ export default class App extends React.Component<IFilterableOrganizationList, IF
     );
   }
 
-  private shouldBeFilteredByCounty(organization: Organization): boolean {
+  private shouldBeFilteredByCounty(organization: Organization): boolean
+  {
     return this.state.selectedCounties.some(() => true) &&
     !organization.countiesServed.some((county) => county === "All") &&
     !organization.countiesServed
@@ -103,29 +109,36 @@ export default class App extends React.Component<IFilterableOrganizationList, IF
       .some((selectedCounty) => selectedCounty === countyServed));
   }
 
-  private shouldBeFilteredByGender(organization: Organization): boolean {
-    if (this.state.selectedGender === Gender.Male) {
+  private shouldBeFilteredByGender(organization: Organization): boolean
+  {
+    if (this.state.selectedGender === Gender.Male)
+    {
       return organization.servesMale === false;
     }
-    if (this.state.selectedGender === Gender.Female) {
+    if (this.state.selectedGender === Gender.Female)
+    {
       return organization.servesFemale === false;
     }
     return false;
   }
 
-  private shouldBeFilteredByService(organization: Organization): boolean {
+  private shouldBeFilteredByService(organization: Organization): boolean
+  {
     return !organization.serviceTags.some((tag) => tag === this.state.selectedService);
   }
 
-  private handleCountiesFilterChange(selectedCounties: string[]) {
+  private handleCountiesFilterChange(selectedCounties: string[])
+  {
     this.setState({ selectedCounties });
   }
 
-  private handleGenderFilterChange(selectedGender: Gender) {
+  private handleGenderFilterChange(selectedGender: Gender)
+  {
     this.setState({ selectedGender });
   }
 
-  private handleServiceFilterChange(selectedService: string) {
+  private handleServiceFilterChange(selectedService: string)
+  {
     this.setState({ selectedService });
   }
 }

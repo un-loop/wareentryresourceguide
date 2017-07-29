@@ -8,7 +8,8 @@ interface IOrganizationListProps {
 }
 
 export default class OrganizationList extends React.Component<IOrganizationListProps, {}> {
-  public render() {
+  public render()
+  {
     return (
       <div>
         <h2>Organizations</h2>

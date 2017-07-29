@@ -8,13 +8,16 @@ interface ICountyCheckboxProps {
   county: string;
 }
 
-export default class CountyCheckbox extends React.Component<ICountyCheckboxProps, {}> {
-  public constructor(props: ICountyCheckboxProps) {
+export default class CountyCheckbox extends React.Component<ICountyCheckboxProps, {}>
+{
+  public constructor(props: ICountyCheckboxProps)
+  {
       super(props);
       this.onChange = this.onChange.bind(this);
   }
 
-    public render() {
+  public render()
+  {
     return (
          <Checkbox
             checked={this.props.checked}
@@ -25,10 +28,14 @@ export default class CountyCheckbox extends React.Component<ICountyCheckboxProps
     );
   }
 
-  public onChange(e: any) {
-    if (e.target.checked) {
+  public onChange(e: any)
+  {
+    if (e.target.checked)
+    {
         this.props.onCheck(this.props.county);
-    } else {
+    }
+    else
+    {
         this.props.onUncheck(this.props.county);
     }
   }

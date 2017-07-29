@@ -2,12 +2,15 @@ import * as React from "react";
 import { ListGroupItem } from "react-bootstrap";
 import Organization from "./Organization";
 
-interface IOrganizationListItemProps {
+interface IOrganizationListItemProps
+{
   organization: Organization;
 }
 
-export default class OrganizationListItem extends React.Component<IOrganizationListItemProps, {}> {
-  public render() {
+export default class OrganizationListItem extends React.Component<IOrganizationListItemProps, {}>
+{
+  public render()
+  {
     return (
         <ListGroupItem>
           <h2>{this.props.organization.name} </h2>

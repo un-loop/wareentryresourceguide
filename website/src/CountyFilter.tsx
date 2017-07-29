@@ -2,20 +2,24 @@ import * as React from "react";
 import { ControlLabel, FormGroup } from "react-bootstrap";
 import CountyCheckbox from "./CountyCheckbox";
 
-interface ICountyFilterProps {
+interface ICountyFilterProps
+{
   onChange: (selectedCounties: string[]) => void;
   selectedCounties: string[];
   counties: string[];
 }
 
-export default class CountyFilter extends React.Component<ICountyFilterProps, {}> {
-  public constructor(props: ICountyFilterProps) {
+export default class CountyFilter extends React.Component<ICountyFilterProps, {}>
+{
+  public constructor(props: ICountyFilterProps)
+  {
     super(props);
     this.onCountySelected = this.onCountySelected.bind(this);
     this.onCountyUnselected = this.onCountyUnselected.bind(this);
   }
 
-  public render() {
+  public render()
+  {
     return (
          <FormGroup>
             <ControlLabel>County</ControlLabel>
@@ -24,15 +28,18 @@ export default class CountyFilter extends React.Component<ICountyFilterProps, {}
     );
   }
 
-  public onCountySelected(county: string) {
+  public onCountySelected(county: string)
+  {
     this.props.onChange(this.props.selectedCounties.concat(county));
    }
 
-  public onCountyUnselected(county: string) {
+  public onCountyUnselected(county: string)
+  {
     this.props.onChange(this.props.selectedCounties.filter((selectedCounty) => selectedCounty !== county));
-   }
+  }
 
-  private getCountyCheckboxes(): JSX.Element[] {
+  private getCountyCheckboxes(): JSX.Element[]
+  {
     return this.props.counties.map((county) =>
       (
         <CountyCheckbox
