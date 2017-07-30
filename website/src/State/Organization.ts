@@ -1,4 +1,6 @@
-export default class Organization
+import { ServiceCategory } from "./ServiceCategory";
+
+export class Organization
 {
     public constructor(
         public readonly name: string,
@@ -8,9 +10,10 @@ export default class Organization
         public readonly website: string,
         public readonly email: string,
         public readonly description: string,
-        public readonly serviceTags: string[],
-        public readonly servesMale: boolean = true,
-        public readonly servesFemale: boolean = true,
+        public readonly servicesCategories: ServiceCategory[],
+        public readonly servesMale: boolean,
+        public readonly servesFemale: boolean,
+        public readonly childrenAllowed: boolean,
     )
     {
     }
