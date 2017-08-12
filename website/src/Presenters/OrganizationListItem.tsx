@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ListGroupItem } from "react-bootstrap";
-import { Organization } from "./State/Organization";
+import { Organization } from "../State/Organization";
 
 interface IOrganizationListItemProps
 {

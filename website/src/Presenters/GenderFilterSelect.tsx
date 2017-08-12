@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ControlLabel, FormControl, FormGroup } from "react-bootstrap";
-import { GenderOption } from "./State/GenderOption";
+import { GenderOption } from "../State/GenderOption";
 
 interface IGenderFilterSelectProps
 {

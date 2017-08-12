@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Col, Grid, Row } from "react-bootstrap";
-import FilterableOrganizationList from "./FilterableOrganizationList";
-import "./modal.css";
+import FilterableOrganizationList from "./Containers/FilterableOrganizationList";
 
 class App extends React.Component<{}, {}> {
   public render()

@@ -1,8 +1,8 @@
 import * as React from "react";
 import { ListGroup } from "react-bootstrap";
+import { Organization } from "../State/Organization";
 import OrganizationListItem from "./OrganizationListItem";
 import {OrganizationListProps} from "./OrganizationListProps";
-import { Organization } from "./State/Organization";
 
 export class OrganizationList extends React.Component<OrganizationListProps, {}> {
   public render()
