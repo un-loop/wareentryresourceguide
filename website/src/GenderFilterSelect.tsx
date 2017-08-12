@@ -1,11 +1,11 @@
 import * as React from "react";
 import { ControlLabel, FormControl, FormGroup } from "react-bootstrap";
-import { Gender } from "./Gender";
+import { GenderOption } from "./State/GenderOption";
 
 interface IGenderFilterSelectProps
 {
-  onChange: (gender: Gender) => void;
-  gender: Gender;
+  onChange: (gender: GenderOption) => void;
+  gender: GenderOption;
 }
 
 export default class GenderFilterSelect extends React.Component<IGenderFilterSelectProps, {}>
@@ -25,7 +25,7 @@ export default class GenderFilterSelect extends React.Component<IGenderFilterSel
               componentClass="select"
               placeholder="select"
               onChange={this.handleChange}
-              value={Gender[this.props.gender]}
+              value={GenderOption[this.props.gender]}
             >
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -38,11 +38,11 @@ export default class GenderFilterSelect extends React.Component<IGenderFilterSel
   {
     if (e.target.value === "Male")
     {
-      this.props.onChange(Gender.Male);
+      this.props.onChange(GenderOption.Male);
     }
     else
     {
-      this.props.onChange(Gender.Female);
+      this.props.onChange(GenderOption.Female);
     }
   }
 }

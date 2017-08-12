@@ -1,10 +1,11 @@
+import { County } from "./County";
 import { ServiceCategory } from "./ServiceCategory";
 
 export class Organization
 {
     public constructor(
         public readonly name: string,
-        public readonly countiesServed: string[],
+        public readonly countiesServed: County[],
         public readonly address: string,
         public readonly phone: string,
         public readonly website: string,

@@ -1,144 +1,52 @@
-import * as React from "react";
-import { Col, Grid, Row } from "react-bootstrap";
-import CountyFilter from "./CountyFilter";
-import {Gender} from "./Gender";
-import GenderFilterSelect from "./GenderFilterSelect";
-import Organization from "./Organization";
-import OrganizationList from "./OrganizationList";
-import ServiceFilterSelect from "./ServiceFilterSelect";
+import { Set} from "immutable";
+import { connect, MapStateToProps } from "react-redux";
+import { OrganizationList } from "./OrganizationList";
+import { OrganizationListProps } from "./OrganizationListProps";
+import { County } from "./State/County";
+import { GenderOption } from "./State/GenderOption";
+import { Organization } from "./State/Organization";
+import { SiteState } from "./State/SiteState";
 
-interface IFilterableOrganizationList
+const mapStateToProps: MapStateToProps<OrganizationListProps, {}> = (state: SiteState): OrganizationListProps =>
+(
+  {organizations: getFilteredOrganizations(state)}
+);
+
+const getFilteredOrganizations = (state: SiteState): Set<Organization> =>
 {
-    organizations: Organization[];
-}
+  return state.organizations
+  .filter((organization) =>
+    filterOnGender(state.genderOptionFilter, organization as Organization) &&
+    filterOnCounty(state.countyFilter, organization as Organization) &&
+    filterOnChildrenAllowed(state.childrenAllowedOnly, organization as Organization),
+)
+  .toSet();
+};
 
-interface IFilterableOrganizationState
+const filterOnGender = (genderOption: GenderOption, organization: Organization): boolean =>
 {
-    selectedGender: Gender;
-    selectedCounties: string[];
-    selectedService: string;
-}
-
-export default class App extends React.Component<IFilterableOrganizationList, IFilterableOrganizationState> {
-  private counties: string[] = new Array<string>("Benton",
-"Chelan",
-"Clark",
-"Cowlitz",
-"Douglas",
-"Grant",
-"Grays Harbor",
-"Island",
-"Jefferson",
-"King",
-"Kitsap",
-"Kittitas",
-"Lewis",
-"Mason",
-"Okanogan",
-"Pierce",
-"Snohomish",
-"Spokane",
-"Stevens",
-"Thurston",
-"Walla Walla",
-"Whatcom",
-"Whitman",
-"Yakima");
-
-  public constructor(props: IFilterableOrganizationList, state: IFilterableOrganizationState )
+  switch (genderOption)
   {
-    super(props, state);
-    this.state = {selectedGender: Gender.Male, selectedCounties: new Array<string>(), selectedService: "None"};
-    this.handleCountiesFilterChange = this.handleCountiesFilterChange.bind(this);
-    this.handleGenderFilterChange = this.handleGenderFilterChange.bind(this);
-    this.handleServiceFilterChange = this.handleServiceFilterChange.bind(this);
+    case GenderOption.PreferNotToSay:
+      return true;
+    case GenderOption.Male:
+      return organization.servesMale;
+    case GenderOption.Female:
+      return organization.servesFemale;
   }
+};
 
-  public render()
-  {
-    return (
-      <div>
-        <Grid>
-          <Row>
-            <Col sm={12} md={4}>
-              <CountyFilter
-                onChange={this.handleCountiesFilterChange}
-                counties={this.counties}
-                selectedCounties={this.state.selectedCounties}
-              />
-            </Col>
-            <Col sm={12} md={4}>
-              <GenderFilterSelect
-                onChange={this.handleGenderFilterChange}
-                gender={this.state.selectedGender}
-              />
-            </Col>
-            <Col sm={12} md={4}>
-              <ServiceFilterSelect
-                onChange={this.handleServiceFilterChange}
-                service={this.state.selectedService}
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <OrganizationList organizations={this.getFilteredOrganizations()}/>
-            </Col>
-          </Row>
-        </Grid>
-      </div>
-    );
-  }
+const filterOnCounty = (countyFilter: Set<County>, organization: Organization): boolean =>
+{
+  return organization.countiesServed.some((county) => countyFilter.some((selectedCounty) =>
+  selectedCounty === county));
+};
 
-  private getFilteredOrganizations(): Organization[]
-  {
-    return this.props.organizations.filter(
-      (organization) =>
-      !this.shouldBeFilteredByCounty(organization)
-      && !this.shouldBeFilteredByGender(organization)
-      && !this.shouldBeFilteredByService(organization),
-    );
-  }
+const filterOnChildrenAllowed = (childrenAllowedOnly: boolean, organization: Organization): boolean =>
+{
+  return childrenAllowedOnly ? organization.childrenAllowed : true;
+};
 
-  private shouldBeFilteredByCounty(organization: Organization): boolean
-  {
-    return this.state.selectedCounties.some(() => true) &&
-    !organization.countiesServed.some((county) => county === "All") &&
-    !organization.countiesServed
-      .some((countyServed) => this.state.selectedCounties
-      .some((selectedCounty) => selectedCounty === countyServed));
-  }
-
-  private shouldBeFilteredByGender(organization: Organization): boolean
-  {
-    if (this.state.selectedGender === Gender.Male)
-    {
-      return organization.servesMale === false;
-    }
-    if (this.state.selectedGender === Gender.Female)
-    {
-      return organization.servesFemale === false;
-    }
-    return false;
-  }
-
-  private shouldBeFilteredByService(organization: Organization): boolean
-  {
-    return !organization.serviceTags.some((tag) => tag === this.state.selectedService);
-  }
-
-  private handleCountiesFilterChange(selectedCounties: string[])
-  {
-    this.setState({ selectedCounties });
-  }
-
-  private handleGenderFilterChange(selectedGender: Gender)
-  {
-    this.setState({ selectedGender });
-  }
-
-  private handleServiceFilterChange(selectedService: string)
-  {
-    this.setState({ selectedService });
-  }
-}
+export default connect(
+  mapStateToProps,
+)(OrganizationList);

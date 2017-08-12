@@ -10,7 +10,7 @@ export class SiteState
         public readonly organizations: Set<Organization>,
         public readonly genderOptionFilter: GenderOption,
         public readonly serviceCategoryFilter: Set<ServiceCategory>,
-        public readonly familyFriendlyFilter: boolean,
+        public readonly childrenAllowedOnly: boolean,
         public readonly countyFilter: Set<County>,
     )
     {}
