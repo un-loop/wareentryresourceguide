@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Col, Grid, Row } from "react-bootstrap";
-import CountyFilterSelector from "./Containers/CountyFilterSelector";
-import FilterableOrganizationList from "./Containers/FilterableOrganizationList";
+import CountyFilterContainer from "./Containers/CountyFilterContainer";
+import OrganizationListContainer from "./Containers/OrganizationListContainer";
 
 export class App extends React.Component<{}, {}> {
   public render()
@@ -15,11 +15,11 @@ export class App extends React.Component<{}, {}> {
             </Col>
           </Row>
           <Row>
-            <CountyFilterSelector/>
+            <CountyFilterContainer/>
           </Row>
           <Row>
             <Col sm={12} md={12}>
-              <FilterableOrganizationList/>
+              <OrganizationListContainer/>
             </Col>
           </Row>
         </Grid>

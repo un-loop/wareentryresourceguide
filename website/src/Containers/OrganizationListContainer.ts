@@ -1,14 +1,11 @@
 import { Set } from "immutable";
 import { connect} from "react-redux";
 import { OrganizationList } from "../Presenters/OrganizationList";
+import {IOrganizationListProps} from "../Presenters/OrganizationList";
 import { County } from "../State/County";
 import { GenderOption } from "../State/GenderOption";
 import { Organization } from "../State/Organization";
 import { SiteState } from "../State/SiteState";
-
-export interface IOrganizationListProps {
-  organizations: Set<Organization>;
-}
 
 function mapStateToProps(state: SiteState): IOrganizationListProps
 {
