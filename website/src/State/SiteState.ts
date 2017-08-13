@@ -12,6 +12,7 @@ export class SiteState
         public readonly serviceCategoryFilter: Set<ServiceCategory>,
         public readonly childrenAllowedOnly: boolean,
         public readonly countyFilter: Set<County>,
+        public readonly availableCounties: Set<County>,
     )
     {}
 }

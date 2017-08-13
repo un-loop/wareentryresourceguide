@@ -7,7 +7,7 @@ interface IOrganizationListItemProps
   organization: Organization;
 }
 
-export default class OrganizationListItem extends React.Component<IOrganizationListItemProps, {}>
+export class OrganizationListItem extends React.Component<IOrganizationListItemProps, {}>
 {
   public render()
   {

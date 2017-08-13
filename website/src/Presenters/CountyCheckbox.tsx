@@ -1,14 +1,9 @@
 import * as React from "react";
 import { Checkbox } from "react-bootstrap";
+import {County} from "../State/County";
+import { ICountyCheckboxProps } from "./ICountyCheckboxProps";
 
-interface ICountyCheckboxProps {
-  onCheck: (county: string) => void;
-  onUncheck: (county: string) => void;
-  checked: boolean;
-  county: string;
-}
-
-export default class CountyCheckbox extends React.Component<ICountyCheckboxProps, {}>
+export class CountyCheckbox extends React.Component<ICountyCheckboxProps, {}>
 {
   public constructor(props: ICountyCheckboxProps)
   {
@@ -20,23 +15,23 @@ export default class CountyCheckbox extends React.Component<ICountyCheckboxProps
   {
     return (
          <Checkbox
-            checked={this.props.checked}
-            onChange={this.onChange}
+          checked={this.props.checked}
+          onChange={this.onChange}
          >
-            {this.props.county}
+            {County[this.props.county]}
          </Checkbox>
     );
   }
 
-  public onChange(e: any)
+  public onChange(event: React.FormEvent<Checkbox>)
   {
-    if (e.target.checked)
+    if (event.currentTarget.props.checked)
     {
-        this.props.onCheck(this.props.county);
+      this.props.onCheck(this.props.county);
     }
     else
     {
-        this.props.onUncheck(this.props.county);
+      this.props.onUncheck(this.props.county);
     }
   }
 }

@@ -4,7 +4,7 @@ import * as React from "react";
 import {render} from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import App from "./App";
+import { App } from "./App";
 import { RootReducer } from "./Reducers/RootReducer";
 import { County } from "./State/County";
 import { GenderOption } from "./State/GenderOption";
@@ -15,25 +15,25 @@ import { SiteState } from "./State/SiteState";
 const store = createStore(
   RootReducer,
   new SiteState(
-    Set<Organization>(
-      new Array<Organization>(
+    Set.of<Organization>(
         new Organization(
           "A",
-          new Array<County>(County.Benton, County.Chelan),
+          Set.of<County>(County.Benton, County.Chelan),
           "B",
           "C",
           "D",
           "E",
           "F",
-          new Array<ServiceCategory>(ServiceCategory.Education),
+          Set.of<ServiceCategory>(ServiceCategory.Education),
           true,
           true,
-          true)),
+          true),
       ),
     GenderOption.PreferNotToSay,
-    Set<ServiceCategory>(new Array<ServiceCategory>(ServiceCategory.Education)),
+    Set.of<ServiceCategory>(ServiceCategory.Education),
     false,
-    Set<County>(new Array<County>(County.Benton, County.Clark))));
+    Set.of<County>(County.Benton, County.Clark),
+    Set.of<County>(County.Benton, County.Clark)));
 
 render(
   (

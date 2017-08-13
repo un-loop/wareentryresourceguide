@@ -8,7 +8,7 @@ interface IGenderFilterSelectProps
   gender: GenderOption;
 }
 
-export default class GenderFilterSelect extends React.Component<IGenderFilterSelectProps, {}>
+export class GenderFilterSelect extends React.Component<IGenderFilterSelectProps, {}>
 {
   public constructor(props: IGenderFilterSelectProps)
   {

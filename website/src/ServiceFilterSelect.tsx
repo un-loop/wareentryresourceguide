@@ -7,7 +7,7 @@ interface IServiceFilterSelectProps
   service: string;
 }
 
-export default class GenderFilterSelect extends React.Component<IServiceFilterSelectProps, {}>
+export class GenderFilterSelect extends React.Component<IServiceFilterSelectProps, {}>
 {
   public constructor(props: IServiceFilterSelectProps)
   {

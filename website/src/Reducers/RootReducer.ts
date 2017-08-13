@@ -19,7 +19,7 @@ export const RootReducer: Reducer<SiteState> = (state: SiteState, action: AnyAct
     }
     if (action instanceof RemoveCountyFilterAction)
     {
-        return assign({}, state, {countyFilter: state.countyFilter.filter((county) => county === action.county)});
+        return assign({}, state, {countyFilter: state.countyFilter.filter((county) => county !== action.county)});
     }
     if (action instanceof RemoveServiceCategoryFilterAction)
     {

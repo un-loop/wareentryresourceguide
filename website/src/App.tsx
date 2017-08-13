@@ -1,8 +1,9 @@
 import * as React from "react";
 import { Col, Grid, Row } from "react-bootstrap";
+import CountyFilterSelector from "./Containers/CountyFilterSelector";
 import FilterableOrganizationList from "./Containers/FilterableOrganizationList";
 
-class App extends React.Component<{}, {}> {
+export class App extends React.Component<{}, {}> {
   public render()
   {
     return (
@@ -14,6 +15,9 @@ class App extends React.Component<{}, {}> {
             </Col>
           </Row>
           <Row>
+            <CountyFilterSelector/>
+          </Row>
+          <Row>
             <Col sm={12} md={12}>
               <FilterableOrganizationList/>
             </Col>
@@ -23,5 +27,3 @@ class App extends React.Component<{}, {}> {
     );
   }
 }
-
-export default App;
