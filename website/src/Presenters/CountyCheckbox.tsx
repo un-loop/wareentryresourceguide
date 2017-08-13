@@ -1,11 +1,22 @@
 import * as React from "react";
 import { Checkbox } from "react-bootstrap";
 import {County} from "../State/County";
-import { ICountyCheckboxProps } from "./ICountyCheckboxProps";
 
-export class CountyCheckbox extends React.Component<ICountyCheckboxProps, {}>
+export interface ICountyCheckboxStateProps {
+      county: County;
+      checked: boolean;
+}
+
+export interface ICountyCheckboxDispatchProps {
+    onDeselect(): void;
+    onSelect(): void;
+}
+
+export type CountyCheckboxProps = ICountyCheckboxStateProps & ICountyCheckboxDispatchProps;
+
+export class CountyCheckbox extends React.Component<CountyCheckboxProps, {}>
 {
-  public constructor(props: ICountyCheckboxProps)
+  public constructor(props: CountyCheckboxProps)
   {
       super(props);
       this.onChange = this.onChange.bind(this);
@@ -27,11 +38,11 @@ export class CountyCheckbox extends React.Component<ICountyCheckboxProps, {}>
   {
     if (event.currentTarget.props.checked)
     {
-      this.props.onCheck(this.props.county);
+      this.props.onSelect();
     }
     else
     {
-      this.props.onUncheck(this.props.county);
+      this.props.onDeselect();
     }
   }
 }

@@ -1,41 +1,34 @@
-import { Set } from "immutable";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { AddCountyFilterAction } from "../Actions/AddCountyFilterAction";
 import { RemoveCountyFilterAction } from "../Actions/RemoveCountyFilterAction";
-import { CountyFilter } from "../Presenters/CountyFilter";
+import { CountyCheckbox, ICountyCheckboxDispatchProps, ICountyCheckboxStateProps } from "../Presenters/CountyCheckbox";
 import { County } from "../State/County";
 import { SiteState } from "../State/SiteState";
 
-interface ICountyFilterStateProps {
-      counties: Set<County>;
-      selectedCounties: Set<County>;
+export interface ICountyCheckboxContainerProps
+{
+  county: County;
 }
 
-interface ICountyFilterDispatchProps {
-    deselectCounty(county: County): void;
-    selectCounty(county: County): void;
-}
-
-export type CountyFilterProps = ICountyFilterStateProps & ICountyFilterDispatchProps;
-
-function mapStateToProps(state: SiteState): ICountyFilterStateProps
+function mapStateToProps(state: SiteState, ownProps: ICountyCheckboxContainerProps): ICountyCheckboxStateProps
 {
   return {
-      counties: state.availableCounties,
-      selectedCounties: state.countyFilter,
+      checked: state.countyFilter.some((selectedCounty: County) => selectedCounty === ownProps.county),
+      county: ownProps.county,
     };
 }
 
-function mapDispatchToProps(dispatch: Dispatch<SiteState>): ICountyFilterDispatchProps
+function mapDispatchToProps(dispatch: Dispatch<SiteState>, ownProps: ICountyCheckboxContainerProps):
+ICountyCheckboxDispatchProps
 {
   return {
-      deselectCounty: (county: County) => dispatch(new RemoveCountyFilterAction(county)),
-      selectCounty: (county: County) => dispatch(new AddCountyFilterAction(county)),
+      onDeselect: () => dispatch(new RemoveCountyFilterAction(ownProps.county)),
+      onSelect: () => dispatch(new AddCountyFilterAction(ownProps.county)),
     };
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(CountyFilter);
+)(CountyCheckbox);

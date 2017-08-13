@@ -12,7 +12,13 @@ export class OrganizationList extends React.Component<IOrganizationListProps, {}
   public render()
   {
     const listItems = this.props.organizations.map(
-      (organization: Organization) => <OrganizationListItem organization={organization as Organization}/>,
+      (organization: Organization) =>
+      (
+        <OrganizationListItem
+          organization={organization as Organization}
+          key={organization.name}
+        />
+      ),
     );
 
     return (
