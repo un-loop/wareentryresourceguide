@@ -33,7 +33,8 @@ const store = createStore(
     Set.of<ServiceCategory>(ServiceCategory.Education),
     false,
     Set.of<County>(County.Benton, County.Clark),
-    Set.of<County>(County.Benton, County.Clark)));
+    Set.of<County>(County.Benton, County.Clark),
+    Set.of<ServiceCategory>(ServiceCategory.Education, ServiceCategory.Health)));
 
 render(
   (

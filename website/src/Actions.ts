@@ -5,8 +5,7 @@ import { ServiceCategory } from "./State/ServiceCategory";
 
 export enum TypeKeys {
     SET_COUNTIES = "SET_COUNTIES",
-    ADD_SERVICE_CATEGORY = "ADD_SERVICE_CATEGORY",
-    REMOVE_SERVICE_CATEGORY = "REMOVE_SERVICE_CATEGORY",
+    SET_SERVICE_CATEGORIES = "SET_SERVICE_CATEGORIES",
     SET_GENDER = "SET_GENDER",
     OTHER_ACTION = "__any_other_action_type__",
 }
@@ -25,31 +24,17 @@ export function SetCounties(counties: Set<County>): ISetCountiesAction
     };
 }
 
-export interface IAddServiceCategoryAction
+export interface ISetServiceCategoriesAction
 {
-    type: TypeKeys.ADD_SERVICE_CATEGORY;
-    serviceCategory: ServiceCategory;
+    type: TypeKeys.SET_SERVICE_CATEGORIES;
+    serviceCategories: Set<ServiceCategory>;
 }
 
-export function AddServiceCategory(serviceCategory: ServiceCategory): IAddServiceCategoryAction
+export function SetServiceCategories(serviceCategories: Set<ServiceCategory>): ISetServiceCategoriesAction
 {
     return {
-        serviceCategory,
-        type: TypeKeys.ADD_SERVICE_CATEGORY,
-    };
-}
-
-export interface IRemoveServiceCategoryAction
-{
-    type: TypeKeys.REMOVE_SERVICE_CATEGORY;
-    serviceCategory: ServiceCategory;
-}
-
-export function RemoveServiceCategory(serviceCategory: ServiceCategory): IRemoveServiceCategoryAction
-{
-    return {
-        serviceCategory,
-        type: TypeKeys.REMOVE_SERVICE_CATEGORY,
+        serviceCategories,
+        type: TypeKeys.SET_SERVICE_CATEGORIES,
     };
 }
 
@@ -69,6 +54,5 @@ export function SetGender(gender: GenderOption): ISetGenderAction
 
 export type ActionType =
     | ISetCountiesAction
-    | IAddServiceCategoryAction
-    | IRemoveServiceCategoryAction
+    | ISetServiceCategoriesAction
     | ISetGenderAction;
