@@ -7,10 +7,8 @@ export const RootReducer: Reducer<SiteState> = (state: SiteState, action: Action
 {
     switch (action.type)
     {
-        case TypeKeys.ADD_COUNTY:
-            return assign({}, state, {countyFilter: state.countyFilter.add(action.county)});
-        case TypeKeys.REMOVE_COUNTY:
-            return assign({}, state, {countyFilter: state.countyFilter.filter((county) => county !== action.county)});
+        case TypeKeys.SET_COUNTIES:
+            return assign({}, state, {countyFilter: action.counties});
         case TypeKeys.ADD_SERVICE_CATEGORY:
             return assign({}, state, {serviceCategoryFilter: state.serviceCategoryFilter.add(action.serviceCategory)});
         case TypeKeys.REMOVE_SERVICE_CATEGORY:

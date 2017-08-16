@@ -1,41 +1,27 @@
+import { Set } from "immutable";
 import { County } from "./State/County";
 import { GenderOption } from "./State/GenderOption";
 import { ServiceCategory } from "./State/ServiceCategory";
 
 export enum TypeKeys {
-    ADD_COUNTY = "ADD_COUNTY",
-    REMOVE_COUNTY = "REMOVE_COUNTY",
+    SET_COUNTIES = "SET_COUNTIES",
     ADD_SERVICE_CATEGORY = "ADD_SERVICE_CATEGORY",
     REMOVE_SERVICE_CATEGORY = "REMOVE_SERVICE_CATEGORY",
     SET_GENDER = "SET_GENDER",
     OTHER_ACTION = "__any_other_action_type__",
 }
 
-export interface IAddCountyAction
+export interface ISetCountiesAction
 {
-    type: TypeKeys.ADD_COUNTY;
-    county: County;
+    type: TypeKeys.SET_COUNTIES;
+    counties: Set<County>;
 }
 
-export function AddCounty(county: County): IAddCountyAction
+export function SetCounties(counties: Set<County>): ISetCountiesAction
 {
     return {
-        county,
-        type: TypeKeys.ADD_COUNTY,
-    };
-}
-
-export interface IRemoveCountyAction
-{
-    type: TypeKeys.REMOVE_COUNTY;
-    county: County;
-}
-
-export function RemoveCounty(county: County): IRemoveCountyAction
-{
-    return {
-        county,
-        type: TypeKeys.REMOVE_COUNTY,
+        counties,
+        type: TypeKeys.SET_COUNTIES,
     };
 }
 
@@ -82,8 +68,7 @@ export function SetGender(gender: GenderOption): ISetGenderAction
 }
 
 export type ActionType =
-    | IAddCountyAction
-    | IRemoveCountyAction
+    | ISetCountiesAction
     | IAddServiceCategoryAction
     | IRemoveServiceCategoryAction
     | ISetGenderAction;
