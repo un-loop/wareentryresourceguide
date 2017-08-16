@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { AddCountyFilterAction } from "../Actions/AddCountyFilterAction";
-import { RemoveCountyFilterAction } from "../Actions/RemoveCountyFilterAction";
+import { AddCounty, RemoveCounty } from "../Actions";
 import { CountyCheckbox, ICountyCheckboxDispatchProps, ICountyCheckboxStateProps } from "../Presenters/CountyCheckbox";
 import { County } from "../State/County";
 import { SiteState } from "../State/SiteState";
@@ -23,8 +22,8 @@ function mapDispatchToProps(dispatch: Dispatch<SiteState>, ownProps: ICountyChec
 ICountyCheckboxDispatchProps
 {
   return {
-      onDeselect: () => dispatch(new RemoveCountyFilterAction(ownProps.county)),
-      onSelect: () => dispatch(new AddCountyFilterAction(ownProps.county)),
+      onDeselect: () => dispatch(RemoveCounty(ownProps.county)),
+      onSelect: () => dispatch(AddCounty(ownProps.county)),
     };
 }
 

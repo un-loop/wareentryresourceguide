@@ -36,7 +36,7 @@ export class CountyCheckbox extends React.Component<CountyCheckboxProps, {}>
 
   public onChange(event: React.FormEvent<Checkbox>)
   {
-    if (event.currentTarget.props.checked)
+    if ((event.currentTarget as any).checked)
     {
       this.props.onSelect();
     }

@@ -5,16 +5,10 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Launch Chrome against dev",
+            "name": "Launch Chrome against webpack dev server.",
+            "sourceMaps": true,
             "url": "http://localhost:8080",
-            "webRoot": "${workspaceRoot}/out/dev"
-        },
-        {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Launch Chrome against prod",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceRoot}/out/prod"
+            "webRoot": "${workspaceRoot}"
         }
     ]
 }
