@@ -1,12 +1,12 @@
 import { Set } from "immutable";
 import { County } from "./State/County";
-import { GenderOption } from "./State/GenderOption";
+import { Gender } from "./State/Gender";
 import { ServiceCategory } from "./State/ServiceCategory";
 
 export enum TypeKeys {
     SET_COUNTIES = "SET_COUNTIES",
     SET_SERVICE_CATEGORIES = "SET_SERVICE_CATEGORIES",
-    SET_GENDER = "SET_GENDER",
+    SET_GENDERS = "SET_GENDERS",
     OTHER_ACTION = "__any_other_action_type__",
 }
 
@@ -40,15 +40,15 @@ export function SetServiceCategories(serviceCategories: Set<ServiceCategory>): I
 
 export interface ISetGenderAction
 {
-    type: TypeKeys.SET_GENDER;
-    gender: GenderOption;
+    type: TypeKeys.SET_GENDERS;
+    genders: Set<Gender>;
 }
 
-export function SetGender(gender: GenderOption): ISetGenderAction
+export function SetGenders(genders: Set<Gender>): ISetGenderAction
 {
     return {
-        gender,
-        type: TypeKeys.SET_GENDER,
+        genders,
+        type: TypeKeys.SET_GENDERS,
     };
 }
 

@@ -1,6 +1,5 @@
 import { Set } from "immutable";
 import * as React from "react";
-import { ControlLabel, FormGroup } from "react-bootstrap";
 import * as Select from "react-select";
 import "react-select/dist/react-select.css";
 import { ServiceCategory } from "../State/ServiceCategory";
@@ -41,10 +40,10 @@ export class ServiceCategoryFilter extends React.Component<ServiceCategoryFilter
       )).toArray();
 
     return (
-         <FormGroup>
-            <ControlLabel>Services</ControlLabel>
+         <div>
+            <h3>Services</h3>
             <Select multi={true} options={options} onChange={this.onChange} value={selectedOptions}/>
-        </FormGroup>
+        </div>
     );
   }
 

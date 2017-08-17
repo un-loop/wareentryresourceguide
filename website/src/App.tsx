@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Col, Grid, Row } from "react-bootstrap";
 import CountyFilterContainer from "./Containers/CountyFilterContainer";
+import GenderFilterContainer from "./Containers/GenderFilterContainer";
 import OrganizationListContainer from "./Containers/OrganizationListContainer";
 import ServiceCategoryFilterContainer from "./Containers/ServiceCategoryFilterContainer";
 
@@ -22,7 +23,10 @@ export class App extends React.Component<{}, {}> {
             <Col sm={12} md={4}>
               <ServiceCategoryFilterContainer/>
             </Col>
-          </Row>
+            <Col sm={12} md={4}>
+              <GenderFilterContainer/>
+            </Col>
+        </Row>
           <Row>
             <Col sm={12} md={12}>
               <OrganizationListContainer/>

@@ -1,6 +1,5 @@
 import { Set } from "immutable";
 import * as React from "react";
-import { ControlLabel, FormGroup } from "react-bootstrap";
 import * as Select from "react-select";
 import "react-select/dist/react-select.css";
 import { County } from "../State/County";
@@ -39,10 +38,10 @@ export class CountyFilter extends React.Component<CountyFilterProps, {}>
       (county) => ({value: county as County, label: County[county as County]})).toArray();
 
     return (
-         <FormGroup>
-            <ControlLabel>County</ControlLabel>
+         <div>
+            <h3>County</h3>
             <Select multi={true} options={options} onChange={this.onChange} value={selectedOptions}/>
-        </FormGroup>
+        </div>
     );
   }
 

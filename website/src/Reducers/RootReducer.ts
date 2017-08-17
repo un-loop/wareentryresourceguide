@@ -11,8 +11,8 @@ export const RootReducer: Reducer<SiteState> = (state: SiteState, action: Action
             return assign({}, state, {countyFilter: action.counties});
         case TypeKeys.SET_SERVICE_CATEGORIES:
             return assign({}, state, {serviceCategoryFilter: action.serviceCategories});
-        case TypeKeys.SET_GENDER:
-            return assign({}, state, {genderOptionFilter: action.gender});
+        case TypeKeys.SET_GENDERS:
+            return assign({}, state, {genderFilter: action.genders});
         default:
             return state;
     }

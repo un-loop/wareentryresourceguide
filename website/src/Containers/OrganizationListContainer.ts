@@ -3,7 +3,7 @@ import { connect} from "react-redux";
 import { OrganizationList } from "../Presenters/OrganizationList";
 import {IOrganizationListProps} from "../Presenters/OrganizationList";
 import { County } from "../State/County";
-import { GenderOption } from "../State/GenderOption";
+// import { Gender } from "../State/Gender";
 import { Organization } from "../State/Organization";
 import { SiteState } from "../State/SiteState";
 
@@ -16,29 +16,28 @@ function getFilteredOrganizations(state: SiteState): Set<Organization>
 {
   return state.organizations
   .filter((organization) =>
-    filterOnGender(state.genderOptionFilter, organization as Organization) &&
+    // filterOnGender(state.genderFilter, organization as Organization) &&
     filterOnCounty(state.countyFilter, organization as Organization) &&
     filterOnChildrenAllowed(state.childrenAllowedOnly, organization as Organization),
   ).toSet();
 }
 
-function filterOnGender(genderOption: GenderOption, organization: Organization): boolean
-{
-  switch (genderOption)
-  {
-    case GenderOption.PreferNotToSay:
-      return true;
-    case GenderOption.Male:
-      return organization.servesMale;
-    case GenderOption.Female:
-      return organization.servesFemale;
-  }
-}
+// function filterOnGender(genderOption: Gender, organization: Organization): boolean
+// {
+//   switch (genderOption)
+//   {
+//     case Gender.PreferNotToSay:
+//       return true;
+//     case Gender.Male:
+//       return organization.servesMale;
+//     case Gender.Female:
+//       return organization.servesFemale;
+//   }
+// }
 
 function filterOnCounty(countyFilter: Set<County>, organization: Organization): boolean
 {
-  return organization.countiesServed.some((county) => countyFilter.some((selectedCounty) =>
-  selectedCounty === county));
+  return !organization.countiesServed.intersect(countyFilter).isEmpty();
 }
 
 function filterOnChildrenAllowed(childrenAllowedOnly: boolean, organization: Organization): boolean

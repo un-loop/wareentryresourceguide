@@ -7,7 +7,7 @@ import { createStore } from "redux";
 import { App } from "./App";
 import { RootReducer } from "./Reducers/RootReducer";
 import { County } from "./State/County";
-import { GenderOption } from "./State/GenderOption";
+import { Gender } from "./State/Gender";
 import { Organization } from "./State/Organization";
 import { ServiceCategory } from "./State/ServiceCategory";
 import { SiteState } from "./State/SiteState";
@@ -29,12 +29,13 @@ const store = createStore(
           true,
           true),
       ),
-    GenderOption.PreferNotToSay,
+    Set.of<Gender>(),
     Set.of<ServiceCategory>(ServiceCategory.Education),
     false,
     Set.of<County>(County.Benton, County.Clark),
     Set.of<County>(County.Benton, County.Clark),
-    Set.of<ServiceCategory>(ServiceCategory.Education, ServiceCategory.Health)));
+    Set.of<ServiceCategory>(ServiceCategory.Education, ServiceCategory.Health),
+    Set.of<Gender>(Gender.Male, Gender.Female)));
 
 render(
   (

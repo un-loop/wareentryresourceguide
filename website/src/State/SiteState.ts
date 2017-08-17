@@ -1,6 +1,6 @@
 import { Set } from "immutable";
 import { County } from "./County";
-import { GenderOption } from "./GenderOption";
+import { Gender } from "./Gender";
 import { Organization } from "./Organization";
 import { ServiceCategory } from "./ServiceCategory";
 
@@ -8,12 +8,13 @@ export class SiteState
 {
     public constructor(
         public readonly organizations: Set<Organization>,
-        public readonly genderOptionFilter: GenderOption,
+        public readonly genderFilter: Set<Gender>,
         public readonly serviceCategoryFilter: Set<ServiceCategory>,
         public readonly childrenAllowedOnly: boolean,
         public readonly countyFilter: Set<County>,
         public readonly availableCounties: Set<County>,
         public readonly availableServiceCategories: Set<ServiceCategory>,
+        public readonly availableGenders: Set<Gender>,
     )
     {}
 }
