@@ -8,9 +8,9 @@ import { SiteState } from "../State/SiteState";
 function mapStateToProps(state: SiteState): IGenderFilterStateProps
 {
   return {
-      genderFilter: state.genderFilter,
-      genders: state.availableGenders,
-    };
+    genderFilter: state.genderFilter,
+    genders: state.availableGenders,
+  };
 }
 
 function mapDispatchToProps(dispatch: Dispatch<SiteState>):
@@ -18,7 +18,7 @@ IGenderFilterDispatchProps
 {
   return {
     setGenders: (counties) => dispatch(SetGenders(counties)),
-    };
+  };
 }
 
 export default connect(

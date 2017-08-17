@@ -42,7 +42,13 @@ export class ServiceCategoryFilter extends React.Component<ServiceCategoryFilter
     return (
          <div>
             <h3>Services</h3>
-            <Select multi={true} options={options} onChange={this.onChange} value={selectedOptions}/>
+            <Select
+              placeholder="All service categories"
+              multi={true}
+              options={options}
+              onChange={this.onChange}
+              value={selectedOptions}
+            />
         </div>
     );
   }

@@ -35,7 +35,13 @@ export class GenderFilter extends React.Component<GenderFilterProps, {}>
     return (
          <div>
             <h3>Gender</h3>
-            <Select multi={true} onChange={this.onChange} options={options} value={selectedOptions}/>
+            <Select
+              placeholder="All genders"
+              multi={true}
+              onChange={this.onChange}
+              options={options}
+              value={selectedOptions}
+            />
         </div>
     );
   }

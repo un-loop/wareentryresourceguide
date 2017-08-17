@@ -40,7 +40,13 @@ export class CountyFilter extends React.Component<CountyFilterProps, {}>
     return (
          <div>
             <h3>County</h3>
-            <Select multi={true} options={options} onChange={this.onChange} value={selectedOptions}/>
+            <Select
+              placeholder="All counties"
+              multi={true}
+              options={options}
+              onChange={this.onChange}
+              value={selectedOptions}
+            />
         </div>
     );
   }

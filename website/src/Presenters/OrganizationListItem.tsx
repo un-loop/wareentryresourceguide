@@ -18,8 +18,6 @@ export class OrganizationListItem extends React.Component<IOrganizationListItemP
           <p>Email: {this.props.organization.email}</p>
           <p>Phone: {this.props.organization.phone}</p>
           <p>Address: {this.props.organization.address}</p>
-          <p>Serves men: {this.props.organization.servesMale ? "Yes" : "No"}</p>
-          <p>Serves women: {this.props.organization.servesFemale ? "Yes" : "No"}</p>
         </ListGroupItem>
     );
   }
