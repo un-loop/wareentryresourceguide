@@ -41,7 +41,7 @@ export class ServiceCategoryFilter extends React.Component<ServiceCategoryFilter
 
     return (
          <div>
-            <h3>Services</h3>
+            <h4>That provide these services:</h4>
             <Select
               placeholder="All service categories"
               multi={true}

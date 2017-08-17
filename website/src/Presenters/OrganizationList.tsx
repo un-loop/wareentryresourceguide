@@ -1,6 +1,6 @@
 import {Set} from "immutable";
 import * as React from "react";
-import { ListGroup } from "react-bootstrap";
+import { ListGroup, Panel } from "react-bootstrap";
 import { Organization } from "../State/Organization";
 import { OrganizationListItem } from "./OrganizationListItem";
 
@@ -22,12 +22,11 @@ export class OrganizationList extends React.Component<IOrganizationListProps, {}
     );
 
     return (
-      <div>
-        <h2>Organizations</h2>
-        <ListGroup>
+      <Panel header={<h3>Found these services:</h3>}>
+        <ListGroup fill={true}>
           {listItems}
         </ListGroup>
-      </div>
+      </Panel>
     );
   }
 }

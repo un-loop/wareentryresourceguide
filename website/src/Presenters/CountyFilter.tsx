@@ -39,7 +39,7 @@ export class CountyFilter extends React.Component<CountyFilterProps, {}>
 
     return (
          <div>
-            <h3>County</h3>
+            <h4>In these counties:</h4>
             <Select
               placeholder="All counties"
               multi={true}

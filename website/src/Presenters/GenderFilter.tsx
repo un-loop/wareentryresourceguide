@@ -34,7 +34,7 @@ export class GenderFilter extends React.Component<GenderFilterProps, {}>
 
     return (
          <div>
-            <h3>Gender</h3>
+            <h4>That serve these genders:</h4>
             <Select
               placeholder="All genders"
               multi={true}
