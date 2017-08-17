@@ -1,18 +1,22 @@
 import * as React from "react";
 import { ControlLabel, FormControl, FormGroup } from "react-bootstrap";
 
-interface IServiceFilterSelectProps {
+interface IServiceFilterSelectProps
+{
   onChange: (service: string) => void;
   service: string;
 }
 
-export default class GenderFilterSelect extends React.Component<IServiceFilterSelectProps, {}> {
-  public constructor(props: IServiceFilterSelectProps) {
+export class GenderFilterSelect extends React.Component<IServiceFilterSelectProps, {}>
+{
+  public constructor(props: IServiceFilterSelectProps)
+  {
     super(props);
     this.handleChange = this.handleChange.bind(this);
   }
 
-  public render() {
+  public render()
+  {
     return (
          <FormGroup controlId="formControlsSelect">
             <ControlLabel>Service</ControlLabel>
@@ -33,7 +37,8 @@ export default class GenderFilterSelect extends React.Component<IServiceFilterSe
     );
   }
 
-  private handleChange(e: any) {
+  private handleChange(e: any)
+  {
     this.props.onChange(e.target.value);
   }
 }
