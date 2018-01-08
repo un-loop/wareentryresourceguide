@@ -1,6 +1,6 @@
 import { Set } from "immutable";
 import * as React from "react";
-import * as Select from "react-select";
+import Select from "react-select";
 import "react-select/dist/react-select.css";
 import { County } from "../State/County";
 

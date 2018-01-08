@@ -1,6 +1,6 @@
 import {Set} from "immutable";
 import * as React from "react";
-import * as Select from "react-select";
+import Select from "react-select";
 import { Gender } from "../State/Gender";
 
 export interface IGenderFilterDispatchProps
