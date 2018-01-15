@@ -1,9 +1,9 @@
 import { assign } from "lodash";
-import { Reducer } from "redux";
-import { ActionType, TypeKeys } from "../Actions";
+import { AnyAction, Reducer } from "redux";
+import { TypeKeys } from "../Actions";
 import { SiteState } from "../State/SiteState";
 
-export const RootReducer: Reducer<SiteState> = (state: SiteState, action: ActionType): SiteState =>
+export const RootReducer: Reducer<SiteState> = (state: SiteState, action: AnyAction): SiteState =>
 {
     switch (action.type)
     {
