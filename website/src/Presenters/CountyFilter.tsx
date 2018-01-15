@@ -28,14 +28,14 @@ export class CountyFilter extends React.Component<CountyFilterProps, {}>
     const selectedOptions = this.props.selectedCounties.map(
         (county) => (
           {
-            label: County[county as County],
-            value: county as County,
+            label: County[county],
+            value: county,
           }
         ),
       ).toArray();
 
     const options = this.props.counties.map(
-      (county) => ({value: county as County, label: County[county as County]})).toArray();
+      (county) => ({value: county, label: County[county]})).toArray();
 
     return (
          <div>
