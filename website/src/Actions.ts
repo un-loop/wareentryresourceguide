@@ -51,8 +51,3 @@ export function SetGenders(genders: Set<Gender>): ISetGenderAction
         type: TypeKeys.SET_GENDERS,
     };
 }
-
-export type ActionType =
-    | ISetCountiesAction
-    | ISetServiceCategoriesAction
-    | ISetGenderAction;
