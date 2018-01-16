@@ -14,14 +14,14 @@ export class OrganizationListItem extends React.Component<IOrganizationListItemP
     let email;
     if (this.props.organization.email)
     {
-      email = <p>Email: <a href="mailto:{this.props.organization.email}">{this.props.organization.email}</a></p>;
+      email = <p>Email: <a href={`${this.props.organization.email}`}>{this.props.organization.email}</a></p>;
     }
     return (
         <ListGroupItem>
           <h3>{this.props.organization.name}</h3>
           <p>{this.props.organization.description}</p>
           {email}
-          <p>Phone: <a href="tel:{this.props.organization.phone}">{this.props.organization.phone}</a></p>
+          <p>Phone: <a href={`tel:${this.props.organization.phone}`}>{this.props.organization.phone}</a></p>
           <p>Address: {this.props.organization.address}</p>
         </ListGroupItem>
     );
