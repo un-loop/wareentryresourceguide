@@ -14,7 +14,7 @@ export class OrganizationListItem extends React.Component<IOrganizationListItemP
     let email;
     if (this.props.organization.email)
     {
-      email = <p>Email: <a href={`${this.props.organization.email}`}>{this.props.organization.email}</a></p>;
+      email = <p>Email: <a href={`mailto:${this.props.organization.email}`}>{this.props.organization.email}</a></p>;
     }
     return (
         <ListGroupItem>
