@@ -1,6 +1,6 @@
 import { Set } from "immutable";
 import * as React from "react";
-import * as Select from "react-select";
+import Select from "react-select";
 import "react-select/dist/react-select.css";
 import { ServiceCategory } from "../State/ServiceCategory";
 
@@ -28,15 +28,15 @@ export class ServiceCategoryFilter extends React.Component<ServiceCategoryFilter
     const selectedOptions = this.props.selectedServiceCategories.map(
         (serviceCategory) => (
           {
-            label: ServiceCategory[serviceCategory as ServiceCategory],
-            value: serviceCategory as ServiceCategory,
+            label: ServiceCategory[serviceCategory],
+            value: serviceCategory,
           }
         ),
       ).toArray();
 
     const options = this.props.serviceCategories.map(
       (serviceCategory) => (
-        {value: serviceCategory as ServiceCategory, label: ServiceCategory[serviceCategory as ServiceCategory]}
+        {value: serviceCategory, label: ServiceCategory[serviceCategory]}
       )).toArray();
 
     return (

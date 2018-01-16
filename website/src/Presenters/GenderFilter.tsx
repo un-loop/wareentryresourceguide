@@ -1,6 +1,6 @@
 import {Set} from "immutable";
 import * as React from "react";
-import * as Select from "react-select";
+import Select from "react-select";
 import { Gender } from "../State/Gender";
 
 export interface IGenderFilterDispatchProps
@@ -27,10 +27,10 @@ export class GenderFilter extends React.Component<GenderFilterProps, {}>
   public render()
   {
     const options = this.props.genders.map(
-      (county) => ({value: county as Gender, label: Gender[county as Gender]})).toArray();
+      (gender) => ({value: gender, label: Gender[gender]})).toArray();
 
     const selectedOptions = this.props.genderFilter.map(
-      (county) => ({value: county as Gender, label: Gender[county as Gender]})).toArray();
+      (gender) => ({value: gender, label: Gender[gender]})).toArray();
 
     return (
          <div>

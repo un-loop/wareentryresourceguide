@@ -23,7 +23,7 @@ export class OrganizationList extends React.Component<IOrganizationListProps, {}
 
     return (
       <Panel header={<h3>Found these services:</h3>}>
-        <ListGroup fill={true}>
+        <ListGroup>
           {listItems}
         </ListGroup>
       </Panel>
