@@ -47,7 +47,7 @@ const CommonConfig: Webpack.Configuration = {
           collapseWhitespace: true,
         },
         template: HtmlWebpackTemplate,
-        title: "re-entry-guide",
+        title: "Washington Re-entry Connect",
       }),
   ],
   resolve: {
