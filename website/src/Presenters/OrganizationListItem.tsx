@@ -11,12 +11,17 @@ export class OrganizationListItem extends React.Component<IOrganizationListItemP
 {
   public render()
   {
+    let email;
+    if (this.props.organization.email)
+    {
+      email = <p>Email: <a href={`mailto:${this.props.organization.email}`}>{this.props.organization.email}</a></p>;
+    }
     return (
         <ListGroupItem>
-          <h2>{this.props.organization.name} </h2>
-          <h3>{this.props.organization.description}</h3>
-          <p>Email: {this.props.organization.email}</p>
-          <p>Phone: {this.props.organization.phone}</p>
+          <h3>{this.props.organization.name}</h3>
+          <p>{this.props.organization.description}</p>
+          {email}
+          <p>Phone: <a href={`tel:${this.props.organization.phone}`}>{this.props.organization.phone}</a></p>
           <p>Address: {this.props.organization.address}</p>
         </ListGroupItem>
     );

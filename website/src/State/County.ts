@@ -1,3 +1,6 @@
+
+import { Set } from "immutable";
+
 export enum County
 {
     Benton,
@@ -24,4 +27,6 @@ export enum County
     Whatcom,
     Whitman,
     Yakima,
-}
+};
+
+export const ALL_COUNTIES = Set.of<County>(County.Benton, County.Chelan, County.Clark);
