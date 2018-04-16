@@ -3,9 +3,6 @@ import { AnyAction, Reducer } from "redux";
 import { TypeKeys } from "../Actions";
 import { SiteState } from "../State/SiteState";
 import { Organization } from "../State/Organization";
-import { County } from "../State/County";
-import { Gender } from "../State/Gender";
-import { ServiceCategory } from "../State/ServiceCategory";
 import { Set } from "immutable";
 
 export const RootReducer: Reducer<SiteState> = (state: SiteState, action: AnyAction): SiteState =>
@@ -19,19 +16,14 @@ export const RootReducer: Reducer<SiteState> = (state: SiteState, action: AnyAct
         case TypeKeys.SET_GENDERS:
             return assign({}, state, {genderFilter: action.genders});
         case TypeKeys.SET_ORGANIZATIONS:
-            let organizations: Set<Organization> = action.organizations;
-            let availableCounties: Set<County> = organizations.flatMap(o => o.countiesServed.toJS());
-            let availableServiceCategories: Set<ServiceCategory> = organizations.flatMap(o => o.servicesCategories);
-            let availableGenders: Set<Gender> = organizations.flatMap(o => o.gendersServed);
-            return new SiteState(
-                availableCounties,
-                availableServiceCategories,
-                availableGenders, 
-                Set.of<County>(),
-                Set.of<ServiceCategory>(),
-                Set.of<Gender>(),
-                false,
-                organizations);
+            let orgs: Set<Organization> = action.organizations;
+            console.log(orgs); // tslint:disable-line
+            return assign({}, state, {
+                availableCounties: orgs.flatMap(o => o.countiesServed),
+                availableServiceCategories: orgs.flatMap(o => o.servicesCategories),
+                availableGenders: orgs.flatMap(o => o.gendersServed),
+                organizations: orgs,
+            });
         default:
             return state;
     }
