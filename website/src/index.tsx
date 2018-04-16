@@ -1,9 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Set } from "immutable";
 import * as React from "react";
-import {render} from "react-dom";
+import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
+import { SetOrganizations} from "./Actions";
 import { App } from "./App";
 import { RootReducer } from "./Reducers/RootReducer";
 import { County } from "./State/County";
@@ -15,28 +16,34 @@ import { SiteState } from "./State/SiteState";
 const store = createStore(
   RootReducer,
   new SiteState(
-    Set.of<County>(County.Benton, County.Clark),
-    Set.of<ServiceCategory>(ServiceCategory.Education, ServiceCategory.Health),
-    Set.of<Gender>(Gender.Male, Gender.Female),
+    Set.of<County>(),
+    Set.of<ServiceCategory>(),
+    Set.of<Gender>(),
     Set.of<County>(),
     Set.of<ServiceCategory>(),
     Set.of<Gender>(),
     false,
-    Set.of<Organization>(
-      new Organization(
-        "Organization Name",
-        "1234 N. Street Ave, City ST 12345",
-        "(555) 123-4567",
-        "www.website.com",
-        "email@domain.com",
-        "This is a fake organization",
-        Set.of<County>(County.Benton, County.Chelan),
-        Set.of<ServiceCategory>(ServiceCategory.Education),
-        Set.of<Gender>(Gender.Male),
-        true),
-    ),
+    Set.of<Organization>(),
   ),
 );
+
+function loadJson<T>(url: string): Promise<T>
+{
+  return fetch(url)
+    .then((response) =>
+    {
+      if (!response.ok)
+      {
+        throw new Error(response.statusText);
+      }
+      return response.json() as Promise<T>;
+    });
+}
+
+loadJson<Organization[]>("./data.json").then((data) =>
+{
+  SetOrganizations(Set(data));
+});
 
 render(
   (
