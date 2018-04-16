@@ -147,7 +147,7 @@
     },
     {
         "name": "Oxford Houses Hotline - Benton County",
-        "county": "Benton",
+        "countiesServed": ["Benton"],
         "phone": "(509)-396-7659",
         "web": "http://bfcac.org/home-base/oxford-houses-of-wa-chapter-22",
         "description": "Oxford House is a self-run and supported recovery house program for individuals recovering from alcoholism and drug addiction.  Oxford Houses assure an alcohol & drug-free living environment.  You must apply directly at one of the Houses.",
@@ -160,7 +160,7 @@
     },
     {
         "name": "Choices and Changes, Inc.",
-        "county": "Benton",
+        "countiesServed": ["Benton"],
         "address": "1236 Columbia Park Trail, Richland, WA 99352",
         "phone": "(509) 735-7899, (844) 244-7962",
         "web": "http://tcchoicesandchanges.com/",
@@ -175,7 +175,7 @@
     },
     {
         "name": "Oxford House J. Harding",
-        "county": "Benton",
+        "countiesServed": ["Benton"],
         "address": "8021 West Hood Avenue, Kennewick, WA 99336",
         "phone": "(509) 430-1155",
         "web": "http://www.transitionalhousing.org/li/wa_99336_oxford-house-j-harding",
@@ -189,7 +189,7 @@
     },
     {
         "name": "Oxford House Park Hills",
-        "county": "Benton",
+        "countiesServed": ["Benton"],
         "address": "1105 West 17th Place, Kennewick, WA 99337",
         "phone": "(509) 619-0535",
         "web": "http://www.transitionalhousing.org/li/oxfordhouseparkhills",
@@ -203,7 +203,7 @@
     },
     {
         "name": "Oxford House Edison",
-        "county": "Benton",
+        "countiesServed": ["Benton"],
         "address": "5914 W 16th Avenue, Kennewick, WA 99338",
         "phone": "(509) 396-2555",
         "web": "http://www.transitionalhousing.org/li/oxfordhouseedison",
@@ -217,7 +217,7 @@
     },
     {
         "name": "Oxford House Kennewick",
-        "county": "Benton",
+        "countiesServed": ["Benton"],
         "address": "7106 West Umatilla Avenue, Kennewick, WA 99336",
         "phone": "(509) 783-6091",
         "web": "http://www.transitionalhousing.org/li/oxfordhousekennewick",
@@ -231,7 +231,7 @@
     },
     {
         "name": "Oxford House Vista",
-        "county": "Benton",
+        "countiesServed": ["Benton"],
         "address": "7120 West Umatilla Avenue, Kennewick, WA 99336",
         "phone": "(509) 735-3139",
         "web": "http://www.transitionalhousing.org/li/oxfordhousevista",
@@ -245,7 +245,7 @@
     },
     {
         "name": "Oxford House Olympic View",
-        "county": "Benton",
+        "countiesServed": ["Benton"],
         "address": "1320 West 14th Avenue, Kennewick, WA 99337",
         "phone": "(509) 586-2491",
         "web": "http://www.transitionalhousing.org/li/oxfordhouseolympicview",
@@ -259,7 +259,7 @@
     },
     {
         "name": "Oxford House Keewaydin",
-        "county": "Benton",
+        "countiesServed": ["Benton"],
         "address": "2113 South Fruitland Street, Kennewick, WA 99337",
         "phone": "(509) 582-8295",
         "web": "http://www.transitionalhousing.org/li/oxfordhousekeewaydin",
@@ -273,7 +273,7 @@
     },
     {
         "name": "Oxford House Mahan",
-        "county": "Benton",
+        "countiesServed": ["Benton"],
         "address": "707 Benham Street, Richland, WA 99352",
         "phone": "(509) 578-1042",
         "web": "http://www.transitionalhousing.org/li/oxfordhousemahan",
@@ -287,7 +287,7 @@
     },
     {
         "name": "Oxford House Cherrywood",
-        "county": "Benton",
+        "countiesServed": ["Benton"],
         "address": "647 Cherrywood Loop, Richland, WA 99354",
         "phone": "(509) 371-9505",
         "web": "http://www.transitionalhousing.org/li/oxfordhousecherrywood",
@@ -301,7 +301,7 @@
     },
     {
         "name": "Oxford House Davenport",
-        "county": "Benton",
+        "countiesServed": ["Benton"],
         "address": "907 Davenport Street, Richland, WA 99352",
         "phone": "(509) 371-9961",
         "web": "http://www.transitionalhousing.org/li/oxfordhousedavenport",
@@ -329,7 +329,7 @@
     },
     {
         "name": "Chalen-Douglas Community Action Council",
-        "county": "Chelan",
+        "countiesServed": ["Chelan"],
         "address": "620 Lewis Street Wenatchee, Washington 98801",
         "phone": "(509) 662-6156",
         "web": "http://www.cdcac.org",
@@ -343,7 +343,7 @@
     },
     {
         "name": "Hospitality House Ministries",
-        "county": "Chelan",
+        "countiesServed": ["Chelan"],
         "address": "1450 S. Wenatchee Ave., Hospitality House Ministries",
         "phone": "(509) 663-4289",
         "web": "http://www.hospitalityministries.org/",
@@ -358,7 +358,7 @@
     },
     {
         "name": "Breaking Free Ministries",
-        "county": "Clark",
+        "countiesServed": ["Clark"],
         "address": "1814 Kauffman Ave, Vancouver, WA 98660",
         "phone": "(360) 737-9869",
         "web": "https://breaking-free-ministries.hub.biz/",
@@ -372,7 +372,7 @@
     },
     {
         "name": "Central Park Place",
-        "county": "Clark",
+        "countiesServed": ["Clark"],
         "address": "1900 Fort Vancouver Way, Vancouver, WA 98663",
         "phone": "(360) 993-9500",
         "web": "http://www.superpages.com/bp/vancouver-wa/central-park-place-L0021413409.htm",
@@ -386,7 +386,7 @@
     },
     {
         "name": "Oxford House Franklin",
-        "county": "Clark",
+        "countiesServed": ["Clark"],
         "address": "500 West 44th Street, Vancouver, WA 98660",
         "phone": "(360) 695-3081",
         "web": "http://www.transitionalhousing.org/li/oxfordhousefranklin",
