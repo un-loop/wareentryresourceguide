@@ -17,7 +17,6 @@ export const RootReducer: Reducer<SiteState> = (state: SiteState, action: AnyAct
             return assign({}, state, {genderFilter: action.genders});
         case TypeKeys.SET_ORGANIZATIONS:
             let orgs: Set<Organization> = action.organizations;
-            console.log(orgs); // tslint:disable-line
             return assign({}, state, {
                 availableCounties: orgs.flatMap(o => o.countiesServed),
                 availableServiceCategories: orgs.flatMap(o => o.servicesCategories),
