@@ -14,12 +14,12 @@ export class OrganizationListItem extends React.Component<IOrganizationListItemP
     let email;
     if (this.props.organization.email)
     {
-      email = <p>Email: <a href="mailto:{this.props.organization.email}">{this.props.organization.email}</a></p>;
+      email = <p>Email: <a href={`mailto:${this.props.organization.email}`}>{this.props.organization.email}</a></p>;
     }
     let phone;
     if (this.props.organization.phone)
     {
-      phone = <p>Phone: <a href="tel:{this.props.organization.phone}">{this.props.organization.phone}</a></p>;
+      phone = <p>Phone: <a href={`tel:${this.props.organization.phone}`}>{this.props.organization.phone}</a></p>;
     }
     let address;
     if (this.props.organization.address)
