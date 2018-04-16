@@ -20,7 +20,7 @@ export class OrganizationListItem extends React.Component<IOrganizationListItemP
     {
       phone = <p>Phone: <a href="tel:{this.props.organization.phone}">{this.props.organization.phone}</a></p>;
     }
-    if (this.props.organization.email)
+    if (this.props.organization.address)
     {
       address = <p>Address: {this.props.organization.address}</p>;
     }
