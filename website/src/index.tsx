@@ -28,7 +28,8 @@ const store = createStore(
   ),
 );
 
-LoadOrganizations().then((organizations) => {
+LoadOrganizations().then((organizations) =>
+{
   store.dispatch(SetOrganizations(organizations));
 });
 
