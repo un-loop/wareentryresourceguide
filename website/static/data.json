@@ -1,7 +1,6 @@
 [
     {
         "name": "Washington State Employment Security Department",
-        "county": "All",
         "address": "P.O. Box 9046, Olympia, WA 98507",
         "phone": "(360) 902-9500",
         "web": "https://esd.wa.gov",
@@ -15,7 +14,6 @@
     },
     {
         "name": "WorkSource",
-        "county": "All",
         "phone": "(888) 316-5627",
         "web": "https://www.worksourcewa.com",
         "description": "Job training and assistance with job search.",
@@ -28,7 +26,6 @@
     },
     {
         "name": "Washington State Department of Licensing",
-        "county": "All",
         "address": "P.O. Box 9020, Olympia, WA 98507",
         "phone": "(360) 902-3600",
         "web": "https://fortress.wa.gov/dol/dolprod/dsdreinstatements/",
@@ -42,7 +39,6 @@
     },
     {
         "name": "The Northwest Justice Project",
-        "county": "All",
         "address": "401 Second Avenue S., Suite 407, Seattle, WA 98104",
         "phone": "(888) 201-1012",
         "web": "https://nwjustice.org",
@@ -56,7 +52,6 @@
     },
     {
         "name": "Northwest Immigrant Rights Project",
-        "county": "All",
         "address": "615 2nd Ave. S. #400, Seattle, WA 98104",
         "phone": "(206) 587-4009",
         "web": "https://www.nwirp.org",
@@ -70,7 +65,6 @@
     },
     {
         "name": "Washington Law Help",
-        "county": "All",
         "web": "https://www.washingtonlawhelp.org/",
         "description": "Washington LawHelp is a guide to free civil legal services for low-income persons and seniors in Washington.",
         "housing": true,
@@ -82,7 +76,6 @@
     },
     {
         "name": "Narcotics Anonymous",
-        "county": "All",
         "web": "https://www.na.org/",
         "description": "Chemical dependency support groups. ",
         "housing": false,
@@ -94,7 +87,6 @@
     },
     {
         "name": "Alcoholics Anonymous",
-        "county": "All",
         "web": "http://www.aa.org/",
         "description": "Alcohol dependency support groups. ",
         "housing": false,
@@ -106,7 +98,6 @@
     },
     {
         "name": "Goodwill Industries",
-        "county": "All",
         "address": "714 S. 27th St., Tacoma, WA 98409",
         "phone": "(253) 573-6500",
         "web": "https://www.goodwillwa.org/",
@@ -120,7 +111,6 @@
     },
     {
         "name": "Washington Connection ",
-        "county": "All",
         "web": "https://www.washingtonconnection.org/home",
         "description": "Website to navigate federal benefits and services throughout state.",
         "housing": true,
@@ -132,7 +122,6 @@
     },
     {
         "name": "Washington State Department of Social and Health Services",
-        "county": "All",
         "phone": "(877) 501-2233",
         "web": "https://www.dshs.wa.gov/",
         "description": "Referrals for social services throughout Washington state.",
@@ -145,7 +134,6 @@
     },
     {
         "name": "Division of Child Support",
-        "county": "All",
         "phone": "(877) 501-2233",
         "web": "www.dshs.wa.go",
         "email": "dcs-cru@dshs.wa.gov",
