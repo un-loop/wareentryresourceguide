@@ -24,4 +24,4 @@ export enum County
     Whatcom,
     Whitman,
     Yakima,
-}
+};
