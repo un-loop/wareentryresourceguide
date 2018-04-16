@@ -40,9 +40,26 @@ function loadJson<T>(url: string): Promise<T>
     });
 }
 
-loadJson<Organization[]>("./data.json").then((data) =>
+function parseOrganization(data: any): Organization
 {
-  store.dispatch(SetOrganizations(Set(data)));
+  return {
+    ...data,
+    countiesServed: Set(data.countiesServed),
+    servicesCategories: Set(data.servicesCategories),
+  };
+}
+
+export function LoadOrganizations(): Promise<Set<Organization>>
+{
+  return loadJson<any[]>("./data.json").then((data) =>
+  {
+    return Set<Organization>(data.map(parseOrganization));
+  });
+}
+
+LoadOrganizations().then((organizations) =>
+{
+  store.dispatch(SetOrganizations(organizations));
 });
 
 render(
