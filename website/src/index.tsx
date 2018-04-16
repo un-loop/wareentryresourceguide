@@ -42,7 +42,7 @@ function loadJson<T>(url: string): Promise<T>
 
 loadJson<Organization[]>("./data.json").then((data) =>
 {
-  SetOrganizations(Set(data));
+  store.dispatch(SetOrganizations(Set(data)));
 });
 
 render(
