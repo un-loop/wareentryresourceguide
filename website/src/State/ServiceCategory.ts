@@ -1,8 +1,1 @@
-export enum ServiceCategory{
-    Housing,
-    Employment,
-    Legal,
-    Education,
-    Health,
-    Other,
-}
+export type ServiceCategory = string;

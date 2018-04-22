@@ -28,7 +28,7 @@ export class ServiceCategoryFilter extends React.Component<ServiceCategoryFilter
     const selectedOptions = this.props.selectedServiceCategories.map(
         (serviceCategory) => (
           {
-            label: ServiceCategory[serviceCategory],
+            label: serviceCategory,
             value: serviceCategory,
           }
         ),
@@ -36,7 +36,7 @@ export class ServiceCategoryFilter extends React.Component<ServiceCategoryFilter
 
     const options = this.props.serviceCategories.map(
       (serviceCategory) => (
-        {value: serviceCategory, label: ServiceCategory[serviceCategory]}
+        {value: serviceCategory, label: serviceCategory}
       )).toArray();
 
     return (

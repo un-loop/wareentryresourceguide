@@ -1,3 +1,4 @@
+import * as CopyWebpackPlugin from "copy-webpack-plugin";
 import * as HtmlWebpackPlugin from "html-webpack-plugin";
 import * as HtmlWebpackTemplate from "html-webpack-template";
 import * as Webpack from "webpack";
@@ -40,6 +41,9 @@ const CommonConfig: Webpack.Configuration = {
     filename: "bundle.[chunkhash].js",
   },
   plugins: [
+      new CopyWebpackPlugin([
+        { from: './static' },
+      ]),
       new HtmlWebpackPlugin({
         appMountId: "root",
         inject: false,
