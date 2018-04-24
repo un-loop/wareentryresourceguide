@@ -1,3 +1,4 @@
+import * as CleanWebpackPlugin from "clean-webpack-plugin";
 import * as Path from "path";
 import * as Webpack from "webpack";
 import * as WebpackMerge from "webpack-merge";
@@ -11,6 +12,9 @@ const prodConfig: Webpack.Configuration = {
     output: {
         path: Path.resolve(__dirname, "out", "prod"),
     },
+    plugins: [
+        new CleanWebpackPlugin(["./out/prod"]),
+    ],
 };
 
 export default WebpackMerge(CommonConfig, prodConfig);
