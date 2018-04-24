@@ -23,6 +23,16 @@ cd website
 npm run startDev
 ```
 
+### Publishing
+
+```
+cd website
+npm run buildProd
+cp out/prod/* ../
+```
+
+Then commit and send a pull request for the changes.
+
 ### Technologies
 
 - React (Facebook's industry standard JS UI library)

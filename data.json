@@ -1,0 +1,363 @@
+[
+    {
+        "name": "Washington State Employment Security Department",
+        "address": "P.O. Box 9046, Olympia, WA 98507",
+        "phone": "(360) 902-9500",
+        "web": "https://esd.wa.gov",
+        "description": "Provides unemployment benefits, and jobs and training resources. ",
+        "servicesCategories": [
+            "Employment",
+            "Education"
+        ]
+    },
+    {
+        "name": "WorkSource",
+        "phone": "(888) 316-5627",
+        "web": "https://www.worksourcewa.com",
+        "description": "Job training and assistance with job search.",
+        "servicesCategories": [
+            "Employment"
+        ]
+    },
+    {
+        "name": "Washington State Department of Licensing",
+        "address": "P.O. Box 9020, Olympia, WA 98507",
+        "phone": "(360) 902-3600",
+        "web": "https://fortress.wa.gov/dol/dolprod/dsdreinstatements/",
+        "description": "Assistance reinstating driver's license.",
+        "servicesCategories": [
+            "Legal"
+        ]
+    },
+    {
+        "name": "The Northwest Justice Project",
+        "address": "401 Second Avenue S., Suite 407, Seattle, WA 98104",
+        "phone": "(888) 201-1012",
+        "web": "https://nwjustice.org",
+        "description": "Legal aid program providing assistance to low-income people.",
+        "servicesCategories": [
+            "Legal"
+        ]
+    },
+    {
+        "name": "Northwest Immigrant Rights Project",
+        "address": "615 2nd Ave. S. #400, Seattle, WA 98104",
+        "phone": "(206) 587-4009",
+        "web": "https://www.nwirp.org",
+        "description": "Legal services focused on immigration issues.",
+        "servicesCategories": [
+            "Legal"
+        ]
+    },
+    {
+        "name": "Washington Law Help",
+        "web": "https://www.washingtonlawhelp.org/",
+        "description": "Washington Law Help is a guide to free civil legal services for low-income persons and seniors in Washington.",
+        "servicesCategories": [
+            "Housing",
+            "Legal"
+        ]
+    },
+    {
+        "name": "Narcotics Anonymous",
+        "web": "https://www.na.org/",
+        "description": "Chemical dependency support groups. ",
+        "servicesCategories": [
+            "Health"
+        ]
+    },
+    {
+        "name": "Alcoholics Anonymous",
+        "web": "http://www.aa.org/",
+        "description": "Alcohol dependency support groups. ",
+        "servicesCategories": [
+            "Health"
+        ]
+    },
+    {
+        "name": "Goodwill Industries",
+        "address": "714 S. 27th St., Tacoma, WA 98409",
+        "phone": "(253) 573-6500",
+        "web": "https://www.goodwillwa.org/",
+        "description": "Open to all not just former felons; classes can be fairly competitive to get into.",
+        "servicesCategories": [
+            "Employment",
+            "Education"
+        ]
+    },
+    {
+        "name": "Washington Connection ",
+        "web": "https://www.washingtonconnection.org/home",
+        "description": "Website to navigate federal benefits and services throughout state.",
+        "servicesCategories": [
+            "Housing",
+            "Employment",
+            "Legal",
+            "Education",
+            "Health"
+        ]
+    },
+    {
+        "name": "Washington State Department of Social and Health Services",
+        "phone": "(877) 501-2233",
+        "web": "https://www.dshs.wa.gov/",
+        "description": "Referrals for social services throughout Washington state.",
+        "servicesCategories": [
+            "Housing",
+            "Education",
+            "Health"
+        ]
+    },
+    {
+        "name": "Division of Child Support",
+        "phone": "(877) 501-2233",
+        "web": "www.dshs.wa.go",
+        "email": "dcs-cru@dshs.wa.gov",
+        "description": "Can help women/men settle their child support bills",
+        "servicesCategories": [
+            "Housing",
+            "Employment",
+            "Health"
+        ]
+    },
+    {
+        "name": "Oxford Houses Hotline - Benton County",
+        "countiesServed": [
+            "Benton"
+        ],
+        "phone": "(509)-396-7659",
+        "web": "http://bfcac.org/home-base/oxford-houses-of-wa-chapter-22",
+        "description": "Oxford House is a self-run and supported recovery house program for individuals recovering from alcoholism and drug addiction.  Oxford Houses assure an alcohol & drug-free living environment. You must apply directly at one of the Houses.",
+        "servicesCategories": [
+            "Housing"
+        ]
+    },
+    {
+        "name": "Choices and Changes, Inc.",
+        "countiesServed": [
+            "Benton"
+        ],
+        "address": "1236 Columbia Park Trail, Richland, WA 99352",
+        "phone": "(509) 735-7899, (844) 244-7962",
+        "web": "http://tcchoicesandchanges.com/",
+        "email": "vyaselsky@tcchoicesandchanges.com",
+        "description": "Choices & Changes' ultimate goal for chemical substance abuse treatment is to empower the patient to achieve permanent abstinence, but the immediate goals are to enhance motivation to remain abstinent, improve the patient's ability to function, and minimize the health and community complications of chemical substance abuse.",
+        "servicesCategories": [
+            "Health"
+        ]
+    },
+    {
+        "name": "Oxford House J. Harding",
+        "countiesServed": [
+            "Benton"
+        ],
+        "address": "8021 West Hood Avenue, Kennewick, WA 99336",
+        "phone": "(509) 430-1155",
+        "web": "http://www.transitionalhousing.org/li/wa_99336_oxford-house-j-harding",
+        "description": "Oxford House J. Harding is a self-run, self-supported recovery house for recovering alcoholics and drug addicts. Oxford House J. Harding is women and childerns facility.",
+        "servicesCategories": [
+            "Housing"
+        ]
+    },
+    {
+        "name": "Oxford House Park Hills",
+        "countiesServed": [
+            "Benton"
+        ],
+        "address": "1105 West 17th Place, Kennewick, WA 99337",
+        "phone": "(509) 619-0535",
+        "web": "http://www.transitionalhousing.org/li/oxfordhouseparkhills",
+        "description": "Oxford House Park Hills is a democratically run, self-supporting and drug free home. This is an all female house.",
+        "servicesCategories": [
+            "Housing"
+        ]
+    },
+    {
+        "name": "Oxford House Edison",
+        "countiesServed": [
+            "Benton"
+        ],
+        "address": "5914 W 16th Avenue, Kennewick, WA 99338",
+        "phone": "(509) 396-2555",
+        "web": "http://www.transitionalhousing.org/li/oxfordhouseedison",
+        "description": "Oxford House Edison is a democratically run, self-supporting and drug free home. This facility accepts men only.",
+        "servicesCategories": [
+            "Housing"
+        ]
+    },
+    {
+        "name": "Oxford House Kennewick",
+        "countiesServed": [
+            "Benton"
+        ],
+        "address": "7106 West Umatilla Avenue, Kennewick, WA 99336",
+        "phone": "(509) 783-6091",
+        "web": "http://www.transitionalhousing.org/li/oxfordhousekennewick",
+        "description": "Oxford House Kennewick is a self-run, self-supported recovery house for recovering alcoholics and drug addicts. This facility accepts men only.",
+        "servicesCategories": [
+            "Housing"
+        ]
+    },
+    {
+        "name": "Oxford House Vista",
+        "countiesServed": [
+            "Benton"
+        ],
+        "address": "7120 West Umatilla Avenue, Kennewick, WA 99336",
+        "phone": "(509) 735-3139",
+        "web": "http://www.transitionalhousing.org/li/oxfordhousevista",
+        "description": "Oxford House Vista is a democratically run, self-supporting and drug free home. Oxford House Vista is an all men sober house.",
+        "servicesCategories": [
+            "Housing"
+        ]
+    },
+    {
+        "name": "Oxford House Olympic View",
+        "countiesServed": [
+            "Benton"
+        ],
+        "address": "1320 West 14th Avenue, Kennewick, WA 99337",
+        "phone": "(509) 586-2491",
+        "web": "http://www.transitionalhousing.org/li/oxfordhouseolympicview",
+        "description": "Oxford House Olympic View is a self-run, self-supported recovery house for recovering alcoholics and drug addicts. Oxford House Olympic View is an all male facility.",
+        "servicesCategories": [
+            "Housing"
+        ]
+    },
+    {
+        "name": "Oxford House Keewaydin",
+        "countiesServed": [
+            "Benton"
+        ],
+        "address": "2113 South Fruitland Street, Kennewick, WA 99337",
+        "phone": "(509) 582-8295",
+        "web": "http://www.transitionalhousing.org/li/oxfordhousekeewaydin",
+        "description": "Oxford House Keewaydin is a self-run, self-supported recovery house for recovering alcoholics and drug addicts. Oxford House Keewaydin is an all male facility.",
+        "servicesCategories": [
+            "Housing"
+        ]
+    },
+    {
+        "name": "Oxford House Mahan",
+        "countiesServed": [
+            "Benton"
+        ],
+        "address": "707 Benham Street, Richland, WA 99352",
+        "phone": "(509) 578-1042",
+        "web": "http://www.transitionalhousing.org/li/oxfordhousemahan",
+        "description": "Oxford House Mahan is a self-run, self-supported recovery house for recovering alcoholics and drug addicts. Oxford House Mahan is a women's self-supporting and drug free home.",
+        "servicesCategories": [
+            "Housing"
+        ]
+    },
+    {
+        "name": "Oxford House Cherrywood",
+        "countiesServed": [
+            "Benton"
+        ],
+        "address": "647 Cherrywood Loop, Richland, WA 99354",
+        "phone": "(509) 371-9505",
+        "web": "http://www.transitionalhousing.org/li/oxfordhousecherrywood",
+        "description": "Oxford House Cherrywood is a democratically run, self-supporting and drug free home. This house is open to women and children only.",
+        "servicesCategories": [
+            "Housing"
+        ]
+    },
+    {
+        "name": "Oxford House Davenport",
+        "countiesServed": [
+            "Benton"
+        ],
+        "address": "907 Davenport Street, Richland, WA 99352",
+        "phone": "(509) 371-9961",
+        "web": "http://www.transitionalhousing.org/li/oxfordhousedavenport",
+        "description": "Oxford House Davenport is a self-run, self-supported recovery house for recovering alcoholics and drug addicts. This house is open to women and children only.",
+        "servicesCategories": [
+            "Housing"
+        ]
+    },
+    {
+        "name": "Benton-Franklin Community Action Committee",
+        "county": "Benton/Franklin",
+        "address": "720 W Court St,  Pasco, WA 99301",
+        "phone": "(509) 545-4042",
+        "web": "http://www.bfcac.org/",
+        "description": "Offers a transitional housing program for homeless families, energy assistance, child care and minor home repair.",
+        "servicesCategories": [
+            "Housing",
+            "Employment",
+            "Legal",
+            "Education",
+            "Health"
+        ]
+    },
+    {
+        "name": "Chalen-Douglas Community Action Council",
+        "countiesServed": [
+            "Chelan"
+        ],
+        "address": "620 Lewis Street Wenatchee, Washington 98801",
+        "phone": "(509) 662-6156",
+        "web": "http://www.cdcac.org",
+        "description": "Providing assistance with home heating, energy conservation, housing, education, adult literacy and food distribution.",
+        "servicesCategories": [
+            "Housing",
+            "Employment"
+        ]
+    },
+    {
+        "name": "Hospitality House Ministries",
+        "countiesServed": [
+            "Chelan"
+        ],
+        "address": "1450 S. Wenatchee Ave., Hospitality House Ministries",
+        "phone": "(509) 663-4289",
+        "web": "http://www.hospitalityministries.org/",
+        "email": "info@hhmwen.org",
+        "description": "Hospitality House provides emergency shelter and transitional housing for homeless men.  We also provide free meals to residents and the public at 7am, 12pm, and 6pm every day.",
+        "servicesCategories": [
+            "Housing",
+            "Employment"
+        ]
+    },
+    {
+        "name": "Breaking Free Ministries",
+        "countiesServed": [
+            "Clark"
+        ],
+        "address": "1814 Kauffman Ave, Vancouver, WA 98660",
+        "phone": "(360) 737-9869",
+        "web": "https://breaking-free-ministries.hub.biz/",
+        "description": "Anyone that is in need of housing and other vital resources",
+        "servicesCategories": [
+            "Housing",
+            "Employment"
+        ]
+    },
+    {
+        "name": "Central Park Place",
+        "countiesServed": [
+            "Clark"
+        ],
+        "address": "1900 Fort Vancouver Way, Vancouver, WA 98663",
+        "phone": "(360) 993-9500",
+        "web": "http://www.superpages.com/bp/vancouver-wa/central-park-place-L0021413409.htm",
+        "description": "Anyone that is in need of housing and other vital resourcesThis Low Income Housing (LIH) project has been in service since 1999 and has a total of 123 low income units, which is significantly more than other LIH properties. All of these units are set aside with rent lower than the rent/income ceiling. If you are interested in securing housing here, call Roy Johnson at (360) 993-9500.",
+        "servicesCategories": [
+            "Housing"
+        ]
+    },
+    {
+        "name": "Oxford House Franklin",
+        "countiesServed": [
+            "Clark"
+        ],
+        "address": "500 West 44th Street, Vancouver, WA 98660",
+        "phone": "(360) 695-3081",
+        "web": "http://www.transitionalhousing.org/li/oxfordhousefranklin",
+        "description": "Oxford House Franklin is a self-run, self-supported recovery house for recovering alcoholics and drug addicts. This facility accepts men only.",
+        "servicesCategories": [
+            "Housing"
+        ]
+    }
+]
